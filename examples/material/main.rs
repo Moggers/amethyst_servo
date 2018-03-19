@@ -5,7 +5,7 @@ extern crate amethyst_servo;
 extern crate genmesh;
 
 use amethyst::assets::Loader;
-use amethyst::core::cgmath::{Deg, InnerSpace, Matrix4, Vector3};
+use amethyst::core::cgmath::{Deg, Matrix4, Vector3};
 use amethyst::core::transform::GlobalTransform;
 use amethyst::prelude::*;
 use amethyst::renderer::*;

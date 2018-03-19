@@ -5,8 +5,7 @@ use libservo::compositing::compositor_thread::EventLoopWaker;
 use libservo::{gl, BrowserId};
 use libservo::compositing::windowing::{AnimationState, WindowMethods};
 use glutin::GlWindow;
-use gfx_device_gl::NewTexture;
-use libservo::euclid::{Point2D, Size2D, TypedPoint2D, TypedScale, TypedSize2D};
+use libservo::euclid::{ Length, TypedPoint2D, TypedScale, TypedSize2D};
 use libservo::webrender_api::{DeviceUintRect, DeviceUintSize};
 use libservo::servo_geometry::DeviceIndependentPixel;
 use libservo::style_traits::cursor::CursorKind;
@@ -18,6 +17,7 @@ use libservo::msg::constellation_msg::{self, Key};
 use libservo::ipc_channel::ipc::IpcSender;
 use amethyst::winit::EventsLoopProxy;
 use amethyst::renderer::Texture;
+use gfx_device_gl::NewTexture;
 
 pub struct ServoWindow {
     pub waker: EventsLoopProxy,
@@ -26,7 +26,7 @@ pub struct ServoWindow {
     // Needs interior mutability, so that resize event can mutate it
     pub dimensions: Arc<Mutex<(u32, u32)>>,
     pub target_texture: Arc<Mutex<Option<u32>>>,
-    pub frame_buffer: Arc<Mutex<Option<u32>>>,
+    pub buffers: Arc<Mutex<Option<(u32, u32)>>>,
 }
 
 impl ServoWindow where {
@@ -57,6 +57,7 @@ impl ServoWindow where {
     }
 
     pub fn set_target(&self, targ: &Texture) {
+        extern crate gfx_device_gl;
         let targ = targ.raw().deref().resource();
         match self.target_texture.lock() {
             Ok(ref mut target) => {
@@ -99,10 +100,15 @@ impl ServoWindow where {
     pub fn setup_framebuffer(&self) -> Result<(), u32> {
         let (width, height) = self.get_dimensions();
         let texture = self.get_target().unwrap();
+
+        // Bind texture
         self.gl.bind_texture(gl::TEXTURE_2D, texture.into());
 
+        // Create FBO
         let frame_buffer = self.gl.gen_framebuffers(1)[0];
         self.gl.bind_framebuffer(gl::FRAMEBUFFER, frame_buffer);
+
+        // Create depth buffer
         let depth_buffer = self.gl.gen_renderbuffers(1)[0];
         self.gl.bind_renderbuffer(gl::RENDERBUFFER, depth_buffer);
         self.gl.renderbuffer_storage(
@@ -111,12 +117,16 @@ impl ServoWindow where {
             width as i32,
             height as i32,
         );
+
+        // Bind depth buffer to FBO
         self.gl.framebuffer_renderbuffer(
             gl::FRAMEBUFFER,
             gl::DEPTH_ATTACHMENT,
             gl::RENDERBUFFER,
             depth_buffer,
         );
+
+        // Bind texture to framebuffer
         self.gl.framebuffer_texture_2d(
             gl::FRAMEBUFFER,
             gl::COLOR_ATTACHMENT0,
@@ -125,12 +135,12 @@ impl ServoWindow where {
             0,
         );
         match self.gl.check_frame_buffer_status(gl::FRAMEBUFFER) {
-            gl::FRAMEBUFFER_COMPLETE => match self.frame_buffer.lock() {
+            gl::FRAMEBUFFER_COMPLETE => match self.buffers.lock() {
                 Ok(mut fb) => {
                     self.gl.bind_framebuffer(gl::FRAMEBUFFER, 0);
                     self.gl.bind_renderbuffer(gl::RENDERBUFFER, 0);
                     self.gl.bind_texture(gl::TEXTURE_2D, 0);
-                    *fb = Some(frame_buffer);
+                    *fb = Some((frame_buffer, depth_buffer));
                     Ok(())
                 }
                 Err(_) => {
@@ -147,18 +157,13 @@ impl ServoWindow where {
         }
     }
 
-    /// Binds the framebuffer which has been marked using set_texture and setup_framebuffer to the
-    /// render target. Will fail with Err(0) if the lock is poisoned, or the framebuffer has not
-    /// been set up. Will fail with an appropriate GLenum if the framebuffer check fails. In the
-    /// event of a framebuffer check failure, the framebuffer will be automatically unbound and the
-    /// render target will be checked again. in the event that the unbind still fails, the error
-    /// code for the framebufferless render target will be returned in leau of the original error.
-    /// Otherwise the original GLEnum from binding the framebuffer shall be returned.
     pub fn enable_fb(&self) -> Result<(), ()> {
-        match self.frame_buffer.lock() {
+        match self.buffers.lock() {
             Ok(guard) => match *guard {
-                Some(fb) => {
-                    self.gl.bind_framebuffer(gl::FRAMEBUFFER, fb);
+                Some((framebuffer, renderbuffer)) => {
+                    self.gl.bind_framebuffer(gl::FRAMEBUFFER, framebuffer);
+                    self.gl.bind_renderbuffer(gl::RENDERBUFFER, renderbuffer);
+                    self.gl.draw_buffers(&[gl::COLOR_ATTACHMENT0]);
                     Ok(())
                 }
                 None => Err(()),
@@ -169,6 +174,8 @@ impl ServoWindow where {
 
     pub fn disable_fb(&self) {
         self.gl.bind_framebuffer(gl::FRAMEBUFFER, 0);
+        self.gl.bind_renderbuffer(gl::RENDERBUFFER, 0);
+        self.gl.draw_buffers(&[gl::BACK_LEFT]);
     }
 }
 
@@ -207,52 +214,41 @@ impl WindowMethods for ServoWindow {
         DeviceUintRect::new(origin, size)
     }
 
-    fn size(&self) -> TypedSize2D<f32, DeviceIndependentPixel> {
-        let (width, height) = self.window
-            .get_inner_size()
-            .expect("Failed to get window inner size.");
-        TypedSize2D::new(width as f32, height as f32)
-    }
-
-    fn client_window(&self, _: BrowserId) -> (Size2D<u32>, Point2D<i32>) {
+    fn client_window(&self, _id: BrowserId) -> (TypedSize2D<u32, DevicePixel>, TypedPoint2D<i32, DevicePixel>) {
         // TODO(ajeffrey): can this fail?
         let (width, height) = self.window
             .get_outer_size()
             .expect("Failed to get window outer size.");
-        let size = Size2D::new(width, height);
+        let size = TypedSize2D::new(width, height);
         // TODO(ajeffrey): can this fail?
         let (x, y) = self.window
             .get_position()
             .expect("Failed to get window position.");
-        let origin = Point2D::new(x as i32, y as i32);
+        let origin = TypedPoint2D::new(x as i32, y as i32);
         (size, origin)
     }
 
-    fn screen_size(&self, _: BrowserId) -> Size2D<u32> {
+    fn screen_size(&self, _: BrowserId) -> TypedSize2D<u32, DevicePixel> {
         let dimensions = self.get_dimensions();
-        let size = Size2D::new(dimensions.0.into(), dimensions.1.into());
+        let size = TypedSize2D::new(dimensions.0.into(), dimensions.1.into());
         size
     }
 
-    fn screen_avail_size(&self, _: BrowserId) -> Size2D<u32> {
+    fn screen_avail_size(&self, _: BrowserId) -> TypedSize2D<u32, DevicePixel> {
         let dimensions = self.get_dimensions();
-        let size = Size2D::new(dimensions.0.into(), dimensions.1.into());
+        let size = TypedSize2D::new(dimensions.0.into(), dimensions.1.into());
         size
     }
 
     fn set_animation_state(&self, _state: AnimationState) {}
 
-    fn set_inner_size(&self, _: BrowserId, _size: Size2D<u32>) {}
+    fn set_inner_size(&self, _: BrowserId, _size: TypedSize2D<u32, DevicePixel>) {}
 
-    fn set_position(&self, _: BrowserId, _point: Point2D<i32>) {}
+    fn set_position(&self, _: BrowserId, _point: TypedPoint2D<i32, DevicePixel>) {}
 
     fn set_fullscreen_state(&self, _: BrowserId, _state: bool) {}
 
-    fn prepare_for_composite(&self, width: usize, height: usize) -> bool {
-        let (tex_width, tex_height) = self.get_dimensions();
-        if width > tex_width as usize || height > tex_height as usize {
-            return false;
-        }
+    fn prepare_for_composite(&self, width: Length<u32, DevicePixel>, height: Length<u32, DevicePixel>) -> bool {
         println!("{:?} by {:?}", width, height);
         match self.enable_fb() {
             Ok(()) => {

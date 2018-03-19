@@ -1,4 +1,3 @@
-extern crate gfx_device_gl;
 extern crate glutin;
 extern crate servo as libservo;
 use self::libservo::gl;
@@ -72,7 +71,7 @@ impl ServoHandle {
                 screen_dimensions.height() as u32,
             ))),
             target_texture: Arc::new(Mutex::new(None)),
-            frame_buffer: Arc::new(Mutex::new(None)),
+            buffers: Arc::new(Mutex::new(None)),
         });
 
         // Get resources
@@ -81,7 +80,8 @@ impl ServoHandle {
         url.push_str(&path.to_str().unwrap());
         url.push_str("/index.html");
         set_resources_path(Some(path.to_str().unwrap().to_string()));
-        let opts = opts::default_opts();
+        let mut opts = opts::default_opts();
+        opts.dump_display_list = true;
         opts::set_defaults(opts);
 
         // Start servo

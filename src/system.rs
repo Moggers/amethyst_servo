@@ -1,12 +1,9 @@
 extern crate genmesh;
 
 use amethyst::ecs::{RunningTime, System};
-use amethyst::core::cgmath::{Matrix4, Vector3};
 use amethyst::prelude::World;
 use super::ServoHandle;
-use amethyst::renderer::{Material, MaterialDefaults, MeshHandle, PosTex, Texture, TextureData,
-                         TextureHandle, TextureMetadata};
-use amethyst::core::transform::{GlobalTransform, Transform};
+use amethyst::renderer::{Texture, TextureData, TextureHandle, TextureMetadata};
 use amethyst::winit::Event;
 use amethyst::shrev::{EventChannel, ReaderId};
 use amethyst::shred::Fetch;
@@ -27,7 +24,7 @@ impl ServoUiSystem {
                 TextureMetadata {
                     sampler: None,
                     mip_levels: Some(1),
-                    size: Some((100, 100)),
+                    size: Some((1024, 1024)),
                     dynamic: false,
                     format: None,
                     channel: None,
