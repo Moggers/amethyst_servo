@@ -20,7 +20,7 @@ impl ServoUiSystem {
             let tex_storage = world.read_resource();
             let loader = world.read_resource::<Loader>();
             let texture_data = TextureData::Rgba(
-                [1., 0., 0., 1.],
+                [1., 1., 1., 0.],
                 TextureMetadata {
                     sampler: None,
                     mip_levels: Some(1),

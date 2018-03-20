@@ -73,9 +73,9 @@ impl ServoHandle {
 
         // Get resources
         let path = env::current_dir().unwrap().join("resources");
-        /*let mut url = "file://".to_string();
+        let mut url = "file://".to_string();
         url.push_str(&path.to_str().unwrap());
-        url.push_str("/index.html");*/
+        url.push_str("/index.html");
         set_resources_path(Some(path.to_str().unwrap().to_string()));
         let mut opts = opts::default_opts();
         opts.dump_display_list = true;
@@ -85,8 +85,7 @@ impl ServoHandle {
         let mut servo = Servo::new(renderer.clone());
 
         // Launch servo
-        //let url = ServoUrl::parse(&url).unwrap();
-        let url = ServoUrl::parse("https://servo.org").unwrap();
+        let url = ServoUrl::parse(&url).unwrap();
         let (sender, receiver) = ipc::channel().unwrap();
         servo.handle_events(vec![WindowEvent::NewBrowser(url, sender)]);
         let id = receiver.recv().unwrap();
