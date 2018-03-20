@@ -2,6 +2,7 @@ extern crate amethyst;
 extern crate gfx_device_gl;
 extern crate glutin;
 extern crate servo as libservo;
+extern crate gfx_core;
 
 pub mod bundle;
 pub mod system;

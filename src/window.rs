@@ -5,7 +5,7 @@ use libservo::compositing::compositor_thread::EventLoopWaker;
 use libservo::{gl, BrowserId};
 use libservo::compositing::windowing::{AnimationState, WindowMethods};
 use glutin::GlWindow;
-use libservo::euclid::{ Length, TypedPoint2D, TypedScale, TypedSize2D};
+use libservo::euclid::{Length, TypedPoint2D, TypedScale, TypedSize2D};
 use libservo::webrender_api::{DeviceUintRect, DeviceUintSize};
 use libservo::servo_geometry::DeviceIndependentPixel;
 use libservo::style_traits::cursor::CursorKind;
@@ -98,15 +98,36 @@ impl ServoWindow where {
     }
 
     pub fn setup_framebuffer(&self) -> Result<(), u32> {
+        // Fetch required width and height
         let (width, height) = self.get_dimensions();
-        let texture = self.get_target().unwrap();
-
-        // Bind texture
-        self.gl.bind_texture(gl::TEXTURE_2D, texture.into());
 
         // Create FBO
         let frame_buffer = self.gl.gen_framebuffers(1)[0];
-        self.gl.bind_framebuffer(gl::FRAMEBUFFER, frame_buffer);
+        self.gl.bind_framebuffer(gl::DRAW_FRAMEBUFFER, frame_buffer);
+
+        // Fetch texture
+        //let texture = self.get_target().unwrap();
+        let texture = self.gl.gen_textures(1)[0];
+        self.gl.bind_texture(gl::TEXTURE_2D, texture);
+        self.gl.tex_image_2d(
+            gl::TEXTURE_2D,
+            0,
+            gl::RGB as i32,
+            width as i32,
+            height as i32,
+            0,
+            gl::RGB,
+            gl::UNSIGNED_BYTE,
+            None,
+        );
+        // Bind texture to framebuffer
+        self.gl.framebuffer_texture_2d(
+            gl::DRAW_FRAMEBUFFER,
+            gl::COLOR_ATTACHMENT0,
+            gl::TEXTURE_2D,
+            texture,
+            0,
+        );
 
         // Create depth buffer
         let depth_buffer = self.gl.gen_renderbuffers(1)[0];
@@ -117,41 +138,39 @@ impl ServoWindow where {
             width as i32,
             height as i32,
         );
-
         // Bind depth buffer to FBO
         self.gl.framebuffer_renderbuffer(
-            gl::FRAMEBUFFER,
+            gl::DRAW_FRAMEBUFFER,
             gl::DEPTH_ATTACHMENT,
             gl::RENDERBUFFER,
             depth_buffer,
         );
 
-        // Bind texture to framebuffer
-        self.gl.framebuffer_texture_2d(
-            gl::FRAMEBUFFER,
-            gl::COLOR_ATTACHMENT0,
-            gl::TEXTURE_2D,
-            texture.into(),
-            0,
-        );
-        match self.gl.check_frame_buffer_status(gl::FRAMEBUFFER) {
+        // Cleanup
+        match self.gl.check_frame_buffer_status(gl::DRAW_FRAMEBUFFER) {
             gl::FRAMEBUFFER_COMPLETE => match self.buffers.lock() {
                 Ok(mut fb) => {
-                    self.gl.bind_framebuffer(gl::FRAMEBUFFER, 0);
+                    self.gl.bind_framebuffer(gl::DRAW_FRAMEBUFFER, 0);
                     self.gl.bind_renderbuffer(gl::RENDERBUFFER, 0);
                     self.gl.bind_texture(gl::TEXTURE_2D, 0);
+                    self.gl
+                        .insert_event_marker_ext(&"Finished setting up servo FBO resources");
                     *fb = Some((frame_buffer, depth_buffer));
                     Ok(())
                 }
                 Err(_) => {
                     self.gl.delete_framebuffers(&[frame_buffer]);
                     self.gl.delete_renderbuffers(&[depth_buffer]);
+                    self.gl
+                        .insert_event_marker_ext(&"Failed setting up servo FBO resources");
                     Err(0)
                 }
             },
             e => {
                 self.gl.delete_framebuffers(&[frame_buffer]);
                 self.gl.delete_renderbuffers(&[depth_buffer]);
+                self.gl
+                    .insert_event_marker_ext(&"Failed setting up servo FBO resources");
                 Err(e)
             }
         }
@@ -160,9 +179,10 @@ impl ServoWindow where {
     pub fn enable_fb(&self) -> Result<(), ()> {
         match self.buffers.lock() {
             Ok(guard) => match *guard {
-                Some((framebuffer, renderbuffer)) => {
-                    self.gl.bind_framebuffer(gl::FRAMEBUFFER, framebuffer);
-                    self.gl.bind_renderbuffer(gl::RENDERBUFFER, renderbuffer);
+                Some((framebuffer, _renderbuffer)) => {
+                    self.gl
+                        .insert_event_marker_ext(&"Binding FBO target for servo");
+                    self.gl.bind_framebuffer(gl::DRAW_FRAMEBUFFER, framebuffer);
                     self.gl.draw_buffers(&[gl::COLOR_ATTACHMENT0]);
                     Ok(())
                 }
@@ -173,8 +193,9 @@ impl ServoWindow where {
     }
 
     pub fn disable_fb(&self) {
-        self.gl.bind_framebuffer(gl::FRAMEBUFFER, 0);
-        self.gl.bind_renderbuffer(gl::RENDERBUFFER, 0);
+        self.gl
+            .insert_event_marker_ext(&"Unbinding FBO target for servo");
+        self.gl.bind_framebuffer(gl::DRAW_FRAMEBUFFER, 0);
         self.gl.draw_buffers(&[gl::BACK_LEFT]);
     }
 }
@@ -214,7 +235,13 @@ impl WindowMethods for ServoWindow {
         DeviceUintRect::new(origin, size)
     }
 
-    fn client_window(&self, _id: BrowserId) -> (TypedSize2D<u32, DevicePixel>, TypedPoint2D<i32, DevicePixel>) {
+    fn client_window(
+        &self,
+        _id: BrowserId,
+    ) -> (
+        TypedSize2D<u32, DevicePixel>,
+        TypedPoint2D<i32, DevicePixel>,
+    ) {
         // TODO(ajeffrey): can this fail?
         let (width, height) = self.window
             .get_outer_size()
@@ -248,7 +275,11 @@ impl WindowMethods for ServoWindow {
 
     fn set_fullscreen_state(&self, _: BrowserId, _state: bool) {}
 
-    fn prepare_for_composite(&self, width: Length<u32, DevicePixel>, height: Length<u32, DevicePixel>) -> bool {
+    fn prepare_for_composite(
+        &self,
+        width: Length<u32, DevicePixel>,
+        height: Length<u32, DevicePixel>,
+    ) -> bool {
         println!("{:?} by {:?}", width, height);
         match self.enable_fb() {
             Ok(()) => {

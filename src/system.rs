@@ -8,6 +8,7 @@ use amethyst::winit::Event;
 use amethyst::shrev::{EventChannel, ReaderId};
 use amethyst::shred::Fetch;
 use amethyst::assets::{AssetStorage, Loader};
+use gfx_core::format::{SurfaceType, ChannelType};
 
 pub struct ServoUiSystem {
     reader_id: ReaderId<Event>,
