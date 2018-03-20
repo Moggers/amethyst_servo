@@ -4,6 +4,8 @@ extern crate amethyst;
 extern crate amethyst_servo;
 extern crate genmesh;
 
+use std::cmp::min;
+
 use amethyst::assets::Loader;
 use amethyst::core::cgmath::{Deg, Matrix4, Vector3};
 use amethyst::core::transform::GlobalTransform;
@@ -122,7 +124,18 @@ fn gen_plane() -> Vec<PosNormTangTex> {
                 position: vertex.pos,
                 normal: normal.into(),
                 tangent: tangent.into(),
-                tex_coord: [vertex.pos[0], vertex.pos[1]],
+                tex_coord: [
+                    if vertex.pos[0] < 0. {
+                        0.
+                    } else {
+                        vertex.pos[0]
+                    },
+                    if vertex.pos[1] < 0. {
+                        0.
+                    } else {
+                        vertex.pos[1]
+                    },
+                ],
             }
         })
         .triangulate()

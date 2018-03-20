@@ -3,12 +3,11 @@ extern crate genmesh;
 use amethyst::ecs::{RunningTime, System};
 use amethyst::prelude::World;
 use super::ServoHandle;
-use amethyst::renderer::{Texture, TextureData, TextureHandle, TextureMetadata};
+use amethyst::renderer::{Texture, TextureData, TextureHandle, TextureMetadata, WindowEvent};
 use amethyst::winit::Event;
 use amethyst::shrev::{EventChannel, ReaderId};
 use amethyst::shred::Fetch;
 use amethyst::assets::{AssetStorage, Loader};
-use gfx_core::format::{SurfaceType, ChannelType};
 
 pub struct ServoUiSystem {
     reader_id: ReaderId<Event>,
@@ -76,11 +75,17 @@ impl<'a> System<'a> for ServoUiSystem {
                 }
                 &Event::WindowEvent {
                     window_id: _window_id,
+                    event: WindowEvent::Resized(_, _),
+                } => {
+                    // Send the resize through to servo
+                }
+                &Event::WindowEvent {
+                    window_id: _window_id,
                     ref event,
                 } => {
                     self.servo.forward_events(vec![event.clone()]);
-                    // Send the resize through to servo
                 }
+
                 _ => {}
             }
         }

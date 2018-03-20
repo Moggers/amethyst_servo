@@ -105,27 +105,14 @@ impl ServoWindow where {
         let frame_buffer = self.gl.gen_framebuffers(1)[0];
         self.gl.bind_framebuffer(gl::DRAW_FRAMEBUFFER, frame_buffer);
 
-        // Fetch texture
-        //let texture = self.get_target().unwrap();
-        let texture = self.gl.gen_textures(1)[0];
+        // Texture
+        let texture = self.get_target().unwrap();
         self.gl.bind_texture(gl::TEXTURE_2D, texture);
-        self.gl.tex_image_2d(
-            gl::TEXTURE_2D,
-            0,
-            gl::RGB as i32,
-            width as i32,
-            height as i32,
-            0,
-            gl::RGB,
-            gl::UNSIGNED_BYTE,
-            None,
-        );
-        // Bind texture to framebuffer
         self.gl.framebuffer_texture_2d(
             gl::DRAW_FRAMEBUFFER,
             gl::COLOR_ATTACHMENT0,
             gl::TEXTURE_2D,
-            texture,
+            texture.into(),
             0,
         );
 
@@ -150,9 +137,6 @@ impl ServoWindow where {
         match self.gl.check_frame_buffer_status(gl::DRAW_FRAMEBUFFER) {
             gl::FRAMEBUFFER_COMPLETE => match self.buffers.lock() {
                 Ok(mut fb) => {
-                    self.gl.bind_framebuffer(gl::DRAW_FRAMEBUFFER, 0);
-                    self.gl.bind_renderbuffer(gl::RENDERBUFFER, 0);
-                    self.gl.bind_texture(gl::TEXTURE_2D, 0);
                     self.gl
                         .insert_event_marker_ext(&"Finished setting up servo FBO resources");
                     *fb = Some((frame_buffer, depth_buffer));
@@ -184,19 +168,15 @@ impl ServoWindow where {
                         .insert_event_marker_ext(&"Binding FBO target for servo");
                     self.gl.bind_framebuffer(gl::DRAW_FRAMEBUFFER, framebuffer);
                     self.gl.draw_buffers(&[gl::COLOR_ATTACHMENT0]);
+                    self.gl.disable(gl::CULL_FACE);
+                    self.gl.depth_func(gl::LESS);
+
                     Ok(())
                 }
                 None => Err(()),
             },
             Err(_) => Err(()),
         }
-    }
-
-    pub fn disable_fb(&self) {
-        self.gl
-            .insert_event_marker_ext(&"Unbinding FBO target for servo");
-        self.gl.bind_framebuffer(gl::DRAW_FRAMEBUFFER, 0);
-        self.gl.draw_buffers(&[gl::BACK_LEFT]);
     }
 }
 
@@ -242,16 +222,9 @@ impl WindowMethods for ServoWindow {
         TypedSize2D<u32, DevicePixel>,
         TypedPoint2D<i32, DevicePixel>,
     ) {
-        // TODO(ajeffrey): can this fail?
-        let (width, height) = self.window
-            .get_outer_size()
-            .expect("Failed to get window outer size.");
-        let size = TypedSize2D::new(width, height);
-        // TODO(ajeffrey): can this fail?
-        let (x, y) = self.window
-            .get_position()
-            .expect("Failed to get window position.");
-        let origin = TypedPoint2D::new(x as i32, y as i32);
+        let dimensions = self.get_dimensions();
+        let size = TypedSize2D::new(dimensions.0, dimensions.1);
+        let origin = TypedPoint2D::new(0, 0);
         (size, origin)
     }
 
@@ -277,10 +250,9 @@ impl WindowMethods for ServoWindow {
 
     fn prepare_for_composite(
         &self,
-        width: Length<u32, DevicePixel>,
-        height: Length<u32, DevicePixel>,
+        _width: Length<u32, DevicePixel>,
+        _height: Length<u32, DevicePixel>,
     ) -> bool {
-        println!("{:?} by {:?}", width, height);
         match self.enable_fb() {
             Ok(()) => {
                 println!("Successfully bound framebuffer");
@@ -294,7 +266,6 @@ impl WindowMethods for ServoWindow {
     }
 
     fn present(&self) {
-        self.disable_fb();
         println!("Unbound framebuffer");
     }
 

@@ -167,6 +167,7 @@ version = "0.1.0"
 dependencies = [
  "amethyst 0.6.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
  "genmesh 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gfx_core 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "gfx_device_gl 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "glutin 0.12.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "libservo 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",

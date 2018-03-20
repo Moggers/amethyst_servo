@@ -66,19 +66,16 @@ impl ServoHandle {
             gl: gl,
             waker: world.read_resource::<EventsLoopProxy>().clone(),
             window: window.clone(),
-            dimensions: Arc::new(Mutex::new((
-                screen_dimensions.width() as u32,
-                screen_dimensions.height() as u32,
-            ))),
+            dimensions: Arc::new(Mutex::new((1024, 1024))),
             target_texture: Arc::new(Mutex::new(None)),
             buffers: Arc::new(Mutex::new(None)),
         });
 
         // Get resources
         let path = env::current_dir().unwrap().join("resources");
-        let mut url = "file://".to_string();
+        /*let mut url = "file://".to_string();
         url.push_str(&path.to_str().unwrap());
-        url.push_str("/index.html");
+        url.push_str("/index.html");*/
         set_resources_path(Some(path.to_str().unwrap().to_string()));
         let mut opts = opts::default_opts();
         opts.dump_display_list = true;
@@ -88,7 +85,8 @@ impl ServoHandle {
         let mut servo = Servo::new(renderer.clone());
 
         // Launch servo
-        let url = ServoUrl::parse(&url).unwrap();
+        //let url = ServoUrl::parse(&url).unwrap();
+        let url = ServoUrl::parse("https://servo.org").unwrap();
         let (sender, receiver) = ipc::channel().unwrap();
         servo.handle_events(vec![WindowEvent::NewBrowser(url, sender)]);
         let id = receiver.recv().unwrap();
