@@ -2,19 +2,11 @@ use std::sync::{Arc, Mutex};
 use std::rc::Rc;
 use std::ops::{Deref, DerefMut};
 use libservo::compositing::compositor_thread::EventLoopWaker;
-use libservo::{gl, BrowserId};
-use libservo::compositing::windowing::{AnimationState, WindowMethods};
+use libservo::gl;
+use libservo::compositing::windowing::{AnimationState, EmbedderCoordinates, WindowMethods};
 use glutin::GlWindow;
-use libservo::euclid::{Length, TypedPoint2D, TypedScale, TypedSize2D};
-use libservo::webrender_api::{DeviceUintRect, DeviceUintSize};
-use libservo::servo_geometry::DeviceIndependentPixel;
-use libservo::style_traits::cursor::CursorKind;
+use libservo::euclid::{Length, TypedPoint2D, TypedRect, TypedScale, TypedSize2D};
 use libservo::style_traits::DevicePixel;
-use libservo::script_traits::LoadData;
-use libservo::net_traits::net_error_list::NetError;
-use libservo::servo_url::ServoUrl;
-use libservo::msg::constellation_msg::{self, Key};
-use libservo::ipc_channel::ipc::IpcSender;
 use amethyst::winit::EventsLoopProxy;
 use amethyst::renderer::Texture;
 use gfx_device_gl::NewTexture;
@@ -75,6 +67,17 @@ impl ServoWindow where {
         }
     }
 
+    pub fn remove_target(&self) -> Result<(), String> {
+        match self.target_texture.lock() {
+            Ok(ref mut target) => {
+                let mut target = target.deref_mut();
+                *target = None;
+                Ok(())
+            }
+            Err(e) => Err(format!("{}", e)),
+        }
+    }
+
     pub fn has_target(&self) -> Result<bool, String> {
         match self.target_texture.lock() {
             Ok(target) => match *target {
@@ -97,7 +100,19 @@ impl ServoWindow where {
         }
     }
 
-    pub fn setup_framebuffer(&self) -> Result<(), u32> {
+    pub fn setup_framebuffer(&self, target: &Texture) -> Result<(), u32> {
+        if let (Ok(option_texture), Ok(option_buffers)) =
+            (self.target_texture.lock(), self.buffers.lock())
+        {
+            if let (Some(texture), Some((framebuffer, renderbuffer))) =
+                (*option_texture, *option_buffers)
+            {
+                self.gl.delete_textures(&[texture]);
+                self.gl.delete_framebuffers(&[framebuffer]);
+                self.gl.delete_renderbuffers(&[renderbuffer]);
+            }
+        }
+        self.set_target(target);
         // Fetch required width and height
         let (width, height) = self.get_dimensions();
 
@@ -200,53 +215,25 @@ impl WindowMethods for ServoWindow {
         self.gl.clone()
     }
 
-    fn framebuffer_size(&self) -> DeviceUintSize {
-        let scale_factor = self.window.hidpi_factor() as u32;
-        // TODO(ajeffrey): can this fail?
-        let (width, height) = self.window
-            .get_inner_size()
-            .expect("Failed to get window inner size.");
-        DeviceUintSize::new(width, height) * scale_factor
-    }
-
-    fn window_rect(&self) -> DeviceUintRect {
-        let size = self.framebuffer_size();
-        let origin = TypedPoint2D::zero();
-        DeviceUintRect::new(origin, size)
-    }
-
-    fn client_window(
-        &self,
-        _id: BrowserId,
-    ) -> (
-        TypedSize2D<u32, DevicePixel>,
-        TypedPoint2D<i32, DevicePixel>,
-    ) {
-        let dimensions = self.get_dimensions();
-        let size = TypedSize2D::new(dimensions.0, dimensions.1);
-        let origin = TypedPoint2D::new(0, 0);
-        (size, origin)
-    }
-
-    fn screen_size(&self, _: BrowserId) -> TypedSize2D<u32, DevicePixel> {
-        let dimensions = self.get_dimensions();
-        let size = TypedSize2D::new(dimensions.0.into(), dimensions.1.into());
-        size
-    }
-
-    fn screen_avail_size(&self, _: BrowserId) -> TypedSize2D<u32, DevicePixel> {
-        let dimensions = self.get_dimensions();
-        let size = TypedSize2D::new(dimensions.0.into(), dimensions.1.into());
-        size
-    }
-
     fn set_animation_state(&self, _state: AnimationState) {}
 
-    fn set_inner_size(&self, _: BrowserId, _size: TypedSize2D<u32, DevicePixel>) {}
-
-    fn set_position(&self, _: BrowserId, _point: TypedPoint2D<i32, DevicePixel>) {}
-
-    fn set_fullscreen_state(&self, _: BrowserId, _state: bool) {}
+    fn get_coordinates(&self) -> EmbedderCoordinates {
+        let coords = self.get_dimensions();
+        EmbedderCoordinates {
+            viewport: TypedRect::new(
+                TypedPoint2D::new(0, 0),
+                TypedSize2D::new(coords.0, coords.1),
+            ),
+            framebuffer: TypedSize2D::new(coords.0, coords.1),
+            hidpi_factor: TypedScale::new(1.),
+            screen: TypedSize2D::new(coords.0, coords.1),
+            screen_avail: TypedSize2D::new(coords.0, coords.1),
+            window: (
+                TypedSize2D::new(coords.0, coords.1),
+                TypedPoint2D::new(0, 0),
+            ),
+        }
+    }
 
     fn prepare_for_composite(
         &self,
@@ -275,46 +262,7 @@ impl WindowMethods for ServoWindow {
         })
     }
 
-    fn set_page_title(&self, _: BrowserId, _title: Option<String>) {}
-
-    fn status(&self, _: BrowserId, _status: Option<String>) {}
-
-    fn load_start(&self, _: BrowserId) {}
-
-    fn load_end(&self, _: BrowserId) {}
-
-    fn history_changed(&self, _: BrowserId, _history: Vec<LoadData>, _current: usize) {}
-
-    fn load_error(&self, _: BrowserId, _: NetError, _: String) {}
-
-    fn head_parsed(&self, _: BrowserId) {}
-
-    /// Has no effect on Android.
-    fn set_cursor(&self, _cursor: CursorKind) {}
-
-    fn set_favicon(&self, _: BrowserId, _: ServoUrl) {}
-
-    /// Helper function to handle keyboard events.
-    fn handle_key(
-        &self,
-        _: Option<BrowserId>,
-        _ch: Option<char>,
-        _key: Key,
-        _mods: constellation_msg::KeyModifiers,
-    ) {
-    }
-
-    fn allow_navigation(&self, _: BrowserId, _: ServoUrl, _response_chan: IpcSender<bool>) {}
-
     fn supports_clipboard(&self) -> bool {
         true
-    }
-
-    fn hidpi_factor(&self) -> TypedScale<f32, DeviceIndependentPixel, DevicePixel> {
-        TypedScale::new(self.window.hidpi_factor())
-    }
-
-    fn handle_panic(&self, _: BrowserId, _reason: String, _backtrace: Option<String>) {
-        // Nothing to do here yet. The crash has already been reported on the console.
     }
 }

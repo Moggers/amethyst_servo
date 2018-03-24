@@ -36,7 +36,7 @@ dependencies = [
 [[package]]
 name = "amethyst"
 version = "0.6.0"
-source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#707e7455130ef65b16391cb03c0855e73860d1c9"
+source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#e3c8e7ddec2515b5839e5495aeca530757326b94"
 dependencies = [
  "amethyst_assets 0.2.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
  "amethyst_audio 0.1.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
@@ -61,7 +61,7 @@ dependencies = [
 [[package]]
 name = "amethyst_assets"
 version = "0.2.0"
-source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#707e7455130ef65b16391cb03c0855e73860d1c9"
+source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#e3c8e7ddec2515b5839e5495aeca530757326b94"
 dependencies = [
  "amethyst_core 0.1.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
  "crossbeam 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -78,7 +78,7 @@ dependencies = [
 [[package]]
 name = "amethyst_audio"
 version = "0.1.0"
-source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#707e7455130ef65b16391cb03c0855e73860d1c9"
+source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#e3c8e7ddec2515b5839e5495aeca530757326b94"
 dependencies = [
  "amethyst_assets 0.2.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
  "amethyst_core 0.1.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
@@ -93,7 +93,7 @@ dependencies = [
 [[package]]
 name = "amethyst_config"
 version = "0.5.0"
-source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#707e7455130ef65b16391cb03c0855e73860d1c9"
+source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#e3c8e7ddec2515b5839e5495aeca530757326b94"
 dependencies = [
  "ron 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -102,9 +102,9 @@ dependencies = [
 [[package]]
 name = "amethyst_core"
 version = "0.1.0"
-source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#707e7455130ef65b16391cb03c0855e73860d1c9"
+source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#e3c8e7ddec2515b5839e5495aeca530757326b94"
 dependencies = [
- "cgmath 0.16.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cgmath 0.16.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "error-chain 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "hibitset 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -118,7 +118,7 @@ dependencies = [
 [[package]]
 name = "amethyst_input"
 version = "0.2.1"
-source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#707e7455130ef65b16391cb03c0855e73860d1c9"
+source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#e3c8e7ddec2515b5839e5495aeca530757326b94"
 dependencies = [
  "amethyst_config 0.5.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
  "amethyst_core 0.1.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
@@ -134,7 +134,7 @@ dependencies = [
 [[package]]
 name = "amethyst_renderer"
 version = "0.6.1"
-source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#707e7455130ef65b16391cb03c0855e73860d1c9"
+source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#e3c8e7ddec2515b5839e5495aeca530757326b94"
 dependencies = [
  "amethyst_assets 0.2.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
  "amethyst_core 0.1.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
@@ -170,14 +170,15 @@ dependencies = [
  "gfx_core 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "gfx_device_gl 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "glutin 0.12.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "libservo 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "hibitset 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libservo 0.0.1 (git+https://github.com/servo/servo)",
  "winit 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "amethyst_ui"
 version = "0.1.0"
-source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#707e7455130ef65b16391cb03c0855e73860d1c9"
+source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#e3c8e7ddec2515b5839e5495aeca530757326b94"
 dependencies = [
  "amethyst_assets 0.2.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
  "amethyst_core 0.1.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
@@ -188,7 +189,7 @@ dependencies = [
  "gfx 0.17.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "gfx_glyph 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "hibitset 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "rusttype 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rusttype 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "shrev 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "specs 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "unicode-normalization 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -199,7 +200,7 @@ dependencies = [
 [[package]]
 name = "amethyst_utils"
 version = "0.1.0"
-source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#707e7455130ef65b16391cb03c0855e73860d1c9"
+source = "git+https://github.com/moggers/amethyst?branch=expose-glwindow#e3c8e7ddec2515b5839e5495aeca530757326b94"
 dependencies = [
  "amethyst_core 0.1.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
  "specs 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -300,7 +301,7 @@ name = "backtrace-sys"
 version = "0.1.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "cc 1.0.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cc 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -320,7 +321,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "bincode"
-version = "0.9.2"
+version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -355,32 +356,32 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "bluetooth"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "bluetooth_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "bluetooth_traits 0.0.1 (git+https://github.com/servo/servo)",
  "device 0.0.1 (git+https://github.com/servo/devices)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_rand 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "tinyfiledialogs 3.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
- "uuid 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_rand 0.0.1 (git+https://github.com/servo/servo)",
+ "tinyfiledialogs 3.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uuid 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "bluetooth_traits"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "regex 0.2.10 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
 ]
 
 [[package]]
 name = "blurdroid"
-version = "0.1.4"
+version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -443,20 +444,20 @@ dependencies = [
 [[package]]
 name = "canvas"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "azure 0.28.0 (git+https://github.com/servo/rust-azure)",
- "canvas_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "compositing 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "canvas_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "compositing 0.0.1 (git+https://github.com/servo/servo)",
  "cssparser 0.23.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "gleam 0.4.25 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gleam 0.4.28 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-traits 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)",
  "offscreen_gl_context 0.15.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
  "webrender 0.57.0 (git+https://github.com/servo/webrender)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
 ]
@@ -464,18 +465,18 @@ dependencies = [
 [[package]]
 name = "canvas_traits"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "cssparser 0.23.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "nonzero 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "nonzero 0.0.1 (git+https://github.com/servo/servo)",
  "offscreen_gl_context 0.15.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
 ]
 
@@ -490,7 +491,7 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.0.8"
+version = "1.0.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -503,7 +504,7 @@ name = "cgl"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "gleam 0.4.25 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gleam 0.4.28 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -519,7 +520,7 @@ dependencies = [
 
 [[package]]
 name = "cgmath"
-version = "0.16.0"
+version = "0.16.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "approx 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -568,7 +569,7 @@ name = "cmake"
 version = "0.1.29"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "cc 1.0.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cc 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -603,25 +604,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "compositing"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "gfx_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "gleam 0.4.25 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gfx_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "gleam 0.4.28 (registry+https://github.com/rust-lang/crates.io-index)",
  "image 0.18.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "nonzero 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_geometry 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "net_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "nonzero 0.0.1 (git+https://github.com/servo/servo)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "script_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_geometry 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
+ "style_traits 0.0.1 (git+https://github.com/servo/servo)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
+ "toml 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "webrender 0.57.0 (git+https://github.com/servo/webrender)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
 ]
@@ -629,39 +631,39 @@ dependencies = [
 [[package]]
 name = "constellation"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "backtrace 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
- "bluetooth_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "canvas 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "canvas_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "bluetooth_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "canvas 0.0.1 (git+https://github.com/servo/servo)",
+ "canvas_traits 0.0.1 (git+https://github.com/servo/servo)",
  "clipboard 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "compositing 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "debugger 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "devtools_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "compositing 0.0.1 (git+https://github.com/servo/servo)",
+ "debugger 0.0.1 (git+https://github.com/servo/servo)",
+ "devtools_traits 0.0.1 (git+https://github.com/servo/servo)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "gaol 0.2.0 (git+https://github.com/servo/gaol)",
- "gfx 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "gfx_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "gfx 0.0.1 (git+https://github.com/servo/servo)",
+ "gfx_traits 0.0.1 (git+https://github.com/servo/servo)",
  "hyper 0.10.13 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "itertools 0.7.7 (registry+https://github.com/rust-lang/crates.io-index)",
- "layout_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "itertools 0.7.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "layout_traits 0.0.1 (git+https://github.com/servo/servo)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "metrics 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "metrics 0.0.1 (git+https://github.com/servo/servo)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "net 0.0.1 (git+https://github.com/servo/servo)",
+ "net_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "script_traits 0.0.1 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_rand 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_remutex 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_rand 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_remutex 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
+ "style_traits 0.0.1 (git+https://github.com/servo/servo)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
- "webvr_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "webvr_traits 0.0.1 (git+https://github.com/servo/servo)",
 ]
 
 [[package]]
@@ -764,7 +766,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "alsa-sys 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "coreaudio-rs 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
+ "futures 0.1.19 (registry+https://github.com/rust-lang/crates.io-index)",
  "kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -782,19 +784,19 @@ name = "crossbeam-deque"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "crossbeam-epoch 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "crossbeam-epoch 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "crossbeam-utils 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "crossbeam-epoch"
-version = "0.3.0"
+version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "arrayvec 0.4.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "cfg-if 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "crossbeam-utils 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "lazy_static 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)",
+ "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "memoffset 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "nodrop 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)",
  "scopeguard 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -887,7 +889,7 @@ dependencies = [
 [[package]]
 name = "debugger"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "ws 0.7.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -905,7 +907,7 @@ dependencies = [
 [[package]]
 name = "deny_public_fields"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "syn 0.12.14 (registry+https://github.com/rust-lang/crates.io-index)",
  "synstructure 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -926,7 +928,7 @@ name = "device"
 version = "0.0.1"
 source = "git+https://github.com/servo/devices#1069d67cbacb28b77a3d5dd7f211171c05f32c62"
 dependencies = [
- "blurdroid 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "blurdroid 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "blurmac 0.1.0 (git+https://github.com/servo/devices)",
  "blurmock 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "blurz 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -935,33 +937,33 @@ dependencies = [
 [[package]]
 name = "devtools"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "devtools_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "devtools_traits 0.0.1 (git+https://github.com/servo/servo)",
  "hyper 0.10.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper_serde 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde_json 1.0.11 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde_json 1.0.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "devtools_traits"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper 0.10.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper_serde 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -976,12 +978,12 @@ dependencies = [
 [[package]]
 name = "dom_struct"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 
 [[package]]
 name = "domobject_derive"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "quote 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "syn 0.12.14 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1091,9 +1093,9 @@ dependencies = [
 [[package]]
 name = "fallible"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "hashglobe 0.1.0 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "hashglobe 0.1.0 (git+https://github.com/servo/servo)",
  "smallvec 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -1185,7 +1187,7 @@ dependencies = [
 
 [[package]]
 name = "futures"
-version = "0.1.18"
+version = "0.1.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -1205,11 +1207,6 @@ dependencies = [
  "log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
-
-[[package]]
-name = "gcc"
-version = "0.3.54"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "gdi32-sys"
@@ -1237,7 +1234,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "gfx"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "app_units 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1250,27 +1247,27 @@ dependencies = [
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "fontsan 0.4.0 (git+https://github.com/servo/fontsan)",
  "freetype 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "gfx_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "gfx_traits 0.0.1 (git+https://github.com/servo/servo)",
  "harfbuzz-sys 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "net_traits 0.0.1 (git+https://github.com/servo/servo)",
  "ordered-float 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "range 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "range 0.0.1 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
  "servo-fontconfig 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_allocator 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_arc 0.1.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_atoms 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_geometry 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_allocator 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_arc 0.1.1 (git+https://github.com/servo/servo)",
+ "servo_atoms 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_geometry 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
  "smallvec 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "style 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "style 0.0.1 (git+https://github.com/servo/servo)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "truetype 0.26.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "unicode-bidi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1332,7 +1329,7 @@ dependencies = [
  "linked-hash-map 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "ordered-float 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "rusttype 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rusttype 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "twox-hash 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "unicode-normalization 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "xi-unicode 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1350,11 +1347,11 @@ dependencies = [
 [[package]]
 name = "gfx_traits"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "range 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "range 0.0.1 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -1399,7 +1396,7 @@ dependencies = [
 
 [[package]]
 name = "gleam"
-version = "0.4.25"
+version = "0.4.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "gl_generator 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1477,7 +1474,7 @@ dependencies = [
 [[package]]
 name = "hashglobe"
 version = "0.1.0"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -1655,7 +1652,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "cgl 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "core-foundation 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "gleam 0.4.25 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gleam 0.4.28 (registry+https://github.com/rust-lang/crates.io-index)",
  "leaky-cow 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -1671,17 +1668,17 @@ dependencies = [
 
 [[package]]
 name = "ipc-channel"
-version = "0.9.1"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "bincode 0.9.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "bincode 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "mio 0.6.14 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "uuid 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uuid 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -1694,7 +1691,7 @@ dependencies = [
 
 [[package]]
 name = "itertools"
-version = "0.7.7"
+version = "0.7.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "either 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1703,6 +1700,11 @@ dependencies = [
 [[package]]
 name = "itoa"
 version = "0.3.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "itoa"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -1717,7 +1719,7 @@ dependencies = [
 [[package]]
 name = "jstraceable_derive"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "quote 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "syn 0.12.14 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1746,41 +1748,41 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "layout"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "app_units 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "atomic_refcell 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "canvas_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "canvas_traits 0.0.1 (git+https://github.com/servo/servo)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "gfx 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "gfx_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "gfx 0.0.1 (git+https://github.com/servo/servo)",
+ "gfx_traits 0.0.1 (git+https://github.com/servo/servo)",
  "html5ever 0.22.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "net_traits 0.0.1 (git+https://github.com/servo/servo)",
  "ordered-float 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "range 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "parking_lot 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "range 0.0.1 (git+https://github.com/servo/servo)",
  "rayon 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "script_layout_interface 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "selectors 0.19.0 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "script_layout_interface 0.0.1 (git+https://github.com/servo/servo)",
+ "script_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "selectors 0.19.0 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde_json 1.0.11 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_arc 0.1.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_atoms 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_geometry 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "serde_json 1.0.13 (registry+https://github.com/rust-lang/crates.io-index)",
+ "servo_arc 0.1.1 (git+https://github.com/servo/servo)",
+ "servo_atoms 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_geometry 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
  "smallvec 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "style 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "style 0.0.1 (git+https://github.com/servo/servo)",
+ "style_traits 0.0.1 (git+https://github.com/servo/servo)",
  "unicode-bidi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "unicode-script 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
@@ -1790,58 +1792,58 @@ dependencies = [
 [[package]]
 name = "layout_thread"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "app_units 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "atomic_refcell 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "gfx 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "gfx_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "gfx 0.0.1 (git+https://github.com/servo/servo)",
+ "gfx_traits 0.0.1 (git+https://github.com/servo/servo)",
  "html5ever 0.22.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "layout 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "layout_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "layout 0.0.1 (git+https://github.com/servo/servo)",
+ "layout_traits 0.0.1 (git+https://github.com/servo/servo)",
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "metrics 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "range 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "metrics 0.0.1 (git+https://github.com/servo/servo)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "net_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "parking_lot 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "range 0.0.1 (git+https://github.com/servo/servo)",
  "rayon 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "script 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_layout_interface 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "selectors 0.19.0 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "serde_json 1.0.11 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_allocator 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_arc 0.1.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_atoms 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_geometry 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "script 0.0.1 (git+https://github.com/servo/servo)",
+ "script_layout_interface 0.0.1 (git+https://github.com/servo/servo)",
+ "script_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "selectors 0.19.0 (git+https://github.com/servo/servo)",
+ "serde_json 1.0.13 (registry+https://github.com/rust-lang/crates.io-index)",
+ "servo_allocator 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_arc 0.1.1 (git+https://github.com/servo/servo)",
+ "servo_atoms 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_geometry 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
+ "style 0.0.1 (git+https://github.com/servo/servo)",
+ "style_traits 0.0.1 (git+https://github.com/servo/servo)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
 ]
 
 [[package]]
 name = "layout_traits"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "gfx 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "metrics 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "gfx 0.0.1 (git+https://github.com/servo/servo)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "metrics 0.0.1 (git+https://github.com/servo/servo)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "net_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "script_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
 ]
 
@@ -1905,49 +1907,49 @@ name = "libloading"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "cc 1.0.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cc 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "libservo"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "bluetooth 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "bluetooth_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "canvas 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "canvas_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "compositing 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "constellation 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "debugger 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "devtools 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "devtools_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "bluetooth 0.0.1 (git+https://github.com/servo/servo)",
+ "bluetooth_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "canvas 0.0.1 (git+https://github.com/servo/servo)",
+ "canvas_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "compositing 0.0.1 (git+https://github.com/servo/servo)",
+ "constellation 0.0.1 (git+https://github.com/servo/servo)",
+ "debugger 0.0.1 (git+https://github.com/servo/servo)",
+ "devtools 0.0.1 (git+https://github.com/servo/servo)",
+ "devtools_traits 0.0.1 (git+https://github.com/servo/servo)",
  "env_logger 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "gaol 0.2.0 (git+https://github.com/servo/gaol)",
- "gfx 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "gleam 0.4.25 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "layout_thread 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "gfx 0.0.1 (git+https://github.com/servo/servo)",
+ "gleam 0.4.28 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "layout_thread 0.0.1 (git+https://github.com/servo/servo)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "profile 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_layout_interface 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_geometry 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "net 0.0.1 (git+https://github.com/servo/servo)",
+ "net_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "profile 0.0.1 (git+https://github.com/servo/servo)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "script 0.0.1 (git+https://github.com/servo/servo)",
+ "script_layout_interface 0.0.1 (git+https://github.com/servo/servo)",
+ "script_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_geometry 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
+ "style 0.0.1 (git+https://github.com/servo/servo)",
+ "style_traits 0.0.1 (git+https://github.com/servo/servo)",
  "webrender 0.57.0 (git+https://github.com/servo/webrender)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
- "webvr 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "webvr_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "webvr 0.0.1 (git+https://github.com/servo/servo)",
+ "webvr_traits 0.0.1 (git+https://github.com/servo/servo)",
 ]
 
 [[package]]
@@ -1955,7 +1957,7 @@ name = "libz-sys"
 version = "1.0.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "cc 1.0.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cc 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "pkg-config 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "vcpkg 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2003,15 +2005,15 @@ dependencies = [
 [[package]]
 name = "malloc_size_of"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "app_units 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "cssparser 0.23.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "hashglobe 0.1.0 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "mozjs 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "selectors 0.19.0 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_arc 0.1.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "hashglobe 0.1.0 (git+https://github.com/servo/servo)",
+ "mozjs 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "selectors 0.19.0 (git+https://github.com/servo/servo)",
+ "servo_arc 0.1.1 (git+https://github.com/servo/servo)",
  "smallbitvec 1.0.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "smallvec 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "string_cache 0.7.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2024,7 +2026,7 @@ dependencies = [
 [[package]]
 name = "malloc_size_of_derive"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "quote 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "syn 0.12.14 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2040,7 +2042,7 @@ dependencies = [
  "phf_codegen 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde_json 1.0.11 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde_json 1.0.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "string_cache 0.7.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "string_cache_codegen 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "tendril 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2084,18 +2086,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "metrics"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "gfx_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gfx_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "script_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -2123,7 +2125,7 @@ name = "miniz-sys"
 version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "cc 1.0.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cc 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -2181,13 +2183,13 @@ name = "mozangle"
 version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "cc 1.0.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cc 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "mozjs"
-version = "0.2.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "cmake 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2225,12 +2227,12 @@ dependencies = [
 [[package]]
 name = "msg"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "nonzero 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "nonzero 0.0.1 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
 ]
@@ -2238,38 +2240,38 @@ dependencies = [
 [[package]]
 name = "net"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "base64 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "brotli 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "cookie 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "devtools_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "devtools_traits 0.0.1 (git+https://github.com/servo/servo)",
  "flate2 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper 0.10.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper-openssl 0.2.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper_serde 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "immeta 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "matches 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "mime 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "mime_guess 1.8.4 (registry+https://github.com/rust-lang/crates.io-index)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "net_traits 0.0.1 (git+https://github.com/servo/servo)",
  "openssl 0.9.24 (registry+https://github.com/rust-lang/crates.io-index)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde_json 1.0.11 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo-websocket 0.20.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "serde_json 1.0.13 (registry+https://github.com/rust-lang/crates.io-index)",
+ "servo-websocket 0.21.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
  "threadpool 1.7.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
- "tinyfiledialogs 3.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "tinyfiledialogs 3.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "unicase 1.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "url 1.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "uuid 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uuid 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
 ]
 
@@ -2286,24 +2288,24 @@ dependencies = [
 [[package]]
 name = "net_traits"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "cookie 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper 0.10.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper_serde 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "image 0.18.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
  "num-traits 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
  "url 1.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "uuid 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uuid 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
 ]
 
@@ -2315,7 +2317,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "nonzero"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -2327,7 +2329,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "num-integer 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-iter 0.1.35 (registry+https://github.com/rust-lang/crates.io-index)",
- "num-traits 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -2335,7 +2337,7 @@ name = "num-integer"
 version = "0.1.36"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "num-traits 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -2344,7 +2346,7 @@ version = "0.1.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "num-integer 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)",
- "num-traits 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -2353,7 +2355,7 @@ version = "0.1.42"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "num-integer 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)",
- "num-traits 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -2361,12 +2363,12 @@ name = "num-traits"
 version = "0.1.43"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "num-traits 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "num-traits"
-version = "0.2.1"
+version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -2417,7 +2419,7 @@ dependencies = [
  "core-foundation 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "gl_generator 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "gleam 0.4.25 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gleam 0.4.28 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libloading 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2479,7 +2481,7 @@ name = "openssl-sys"
 version = "0.9.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "cc 1.0.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cc 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "pkg-config 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "vcpkg 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2522,6 +2524,15 @@ dependencies = [
 [[package]]
 name = "parking_lot"
 version = "0.4.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "owning_ref 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "parking_lot_core 0.2.13 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "parking_lot"
+version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "owning_ref 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2627,31 +2638,32 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "profile"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "heartbeats-simple 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "influent 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
  "regex 0.2.10 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde_json 1.0.11 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "task_info 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "serde_json 1.0.13 (registry+https://github.com/rust-lang/crates.io-index)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "task_info 0.0.1 (git+https://github.com/servo/servo)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "profile_traits"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "bincode 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
  "signpost 0.1.0 (git+https://github.com/pcwalton/signpost.git)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -2711,10 +2723,10 @@ dependencies = [
 [[package]]
 name = "range"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
  "num-traits 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -2808,7 +2820,7 @@ dependencies = [
  "cgmath 0.14.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "claxon 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "cpal 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
+ "futures 0.1.19 (registry+https://github.com/rust-lang/crates.io-index)",
  "hound 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 0.1.16 (registry+https://github.com/rust-lang/crates.io-index)",
  "lewton 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2873,10 +2885,11 @@ dependencies = [
 
 [[package]]
 name = "rusttype"
-version = "0.4.1"
+version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "arrayvec 0.4.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "linked-hash-map 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "ordered-float 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "stb_truetype 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2909,157 +2922,157 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "script"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "app_units 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "audio-video-metadata 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "base64 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "bluetooth_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "bluetooth_traits 0.0.1 (git+https://github.com/servo/servo)",
  "byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "canvas_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "canvas_traits 0.0.1 (git+https://github.com/servo/servo)",
  "caseless 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "chrono 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "cmake 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
  "cookie 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "cssparser 0.23.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "deny_public_fields 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "devtools_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "dom_struct 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "domobject_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "deny_public_fields 0.0.1 (git+https://github.com/servo/servo)",
+ "devtools_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "dom_struct 0.0.1 (git+https://github.com/servo/servo)",
+ "domobject_derive 0.0.1 (git+https://github.com/servo/servo)",
  "encoding_rs 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "gleam 0.4.25 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gleam 0.4.28 (registry+https://github.com/rust-lang/crates.io-index)",
  "half 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "html5ever 0.22.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper 0.10.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper_serde 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "image 0.18.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "jstraceable_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jstraceable_derive 0.0.1 (git+https://github.com/servo/servo)",
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "metrics 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "metrics 0.0.1 (git+https://github.com/servo/servo)",
  "mime 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "mime_guess 1.8.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "mitochondria 1.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "mozangle 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "mozjs 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "mozjs 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "net_traits 0.0.1 (git+https://github.com/servo/servo)",
  "num-traits 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)",
  "offscreen_gl_context 0.15.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "parking_lot 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "phf 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
  "phf_codegen 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
  "phf_shared 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
  "ref_filter_map 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "ref_slice 1.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "regex 0.2.10 (registry+https://github.com/rust-lang/crates.io-index)",
- "script_layout_interface 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_plugins 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "selectors 0.19.0 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "script_layout_interface 0.0.1 (git+https://github.com/servo/servo)",
+ "script_plugins 0.0.1 (git+https://github.com/servo/servo)",
+ "script_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "selectors 0.19.0 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde_json 1.0.11 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_allocator 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_arc 0.1.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_atoms 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_geometry 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_rand 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "serde_json 1.0.13 (registry+https://github.com/rust-lang/crates.io-index)",
+ "servo_allocator 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_arc 0.1.1 (git+https://github.com/servo/servo)",
+ "servo_atoms 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_geometry 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_rand 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
  "smallvec 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "style 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "style 0.0.1 (git+https://github.com/servo/servo)",
+ "style_traits 0.0.1 (git+https://github.com/servo/servo)",
  "swapper 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
- "tinyfiledialogs 3.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "tinyfiledialogs 3.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "unicode-segmentation 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "url 1.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "utf-8 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "uuid 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uuid 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
- "webvr_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "webvr_traits 0.0.1 (git+https://github.com/servo/servo)",
  "xml5ever 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "script_layout_interface"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "app_units 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "atomic_refcell 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "canvas_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "canvas_traits 0.0.1 (git+https://github.com/servo/servo)",
  "cssparser 0.23.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "gfx_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "gfx_traits 0.0.1 (git+https://github.com/servo/servo)",
  "html5ever 0.22.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "metrics 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "range 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "script_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "selectors 0.19.0 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_arc 0.1.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_atoms 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "metrics 0.0.1 (git+https://github.com/servo/servo)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "net_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "range 0.0.1 (git+https://github.com/servo/servo)",
+ "script_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "selectors 0.19.0 (git+https://github.com/servo/servo)",
+ "servo_arc 0.1.1 (git+https://github.com/servo/servo)",
+ "servo_atoms 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
+ "style 0.0.1 (git+https://github.com/servo/servo)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
 ]
 
 [[package]]
 name = "script_plugins"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 
 [[package]]
 name = "script_traits"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "bluetooth_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "canvas_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "bluetooth_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "canvas_traits 0.0.1 (git+https://github.com/servo/servo)",
  "cookie 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "devtools_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "devtools_traits 0.0.1 (git+https://github.com/servo/servo)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "gfx_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "gfx_traits 0.0.1 (git+https://github.com/servo/servo)",
  "hyper 0.10.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper_serde 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
+ "net_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "profile_traits 0.0.1 (git+https://github.com/servo/servo)",
  "rustc-serialize 0.3.24 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_atoms 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_atoms 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
+ "style_traits 0.0.1 (git+https://github.com/servo/servo)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "url 1.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
- "webvr_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "webvr_traits 0.0.1 (git+https://github.com/servo/servo)",
 ]
 
 [[package]]
 name = "selectors"
 version = "0.19.0"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "cssparser 0.23.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3069,7 +3082,7 @@ dependencies = [
  "phf 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
  "phf_codegen 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
  "precomputed-hash 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_arc 0.1.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_arc 0.1.1 (git+https://github.com/servo/servo)",
  "smallvec 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -3115,12 +3128,12 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.11"
+version = "1.0.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "dtoa 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "itoa 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
- "num-traits 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "itoa 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -3169,7 +3182,7 @@ dependencies = [
  "cmake 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "expat-sys 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
- "gleam 0.4.25 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gleam 0.4.28 (registry+https://github.com/rust-lang/crates.io-index)",
  "glutin 0.13.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "glx 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "io-surface 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3182,16 +3195,15 @@ dependencies = [
 
 [[package]]
 name = "servo-websocket"
-version = "0.20.1"
+version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "base64 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper 0.10.13 (registry+https://github.com/rust-lang/crates.io-index)",
- "net2 0.2.32 (registry+https://github.com/rust-lang/crates.io-index)",
- "openssl 0.9.24 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sha1 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "unicase 1.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "url 1.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -3199,7 +3211,7 @@ dependencies = [
 [[package]]
 name = "servo_allocator"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -3207,7 +3219,7 @@ dependencies = [
 [[package]]
 name = "servo_arc"
 version = "0.1.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "nodrop 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)",
  "stable_deref_trait 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3216,7 +3228,7 @@ dependencies = [
 [[package]]
 name = "servo_atoms"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "string_cache 0.7.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "string_cache_codegen 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3225,7 +3237,7 @@ dependencies = [
 [[package]]
 name = "servo_config"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "android_injected_glue 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3235,8 +3247,8 @@ dependencies = [
  "num_cpus 1.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc-serialize 0.3.24 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_geometry 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_geometry 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
  "url 1.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "xdg 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -3244,48 +3256,49 @@ dependencies = [
 [[package]]
 name = "servo_geometry"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "app_units 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "style_traits 0.0.1 (git+https://github.com/servo/servo)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
 ]
 
 [[package]]
 name = "servo_rand"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rand 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uuid 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "servo_remutex"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "nonzero 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "nonzero 0.0.1 (git+https://github.com/servo/servo)",
 ]
 
 [[package]]
 name = "servo_url"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_rand 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_rand 0.0.1 (git+https://github.com/servo/servo)",
  "url 1.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "url_serde 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "uuid 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uuid 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -3376,7 +3389,7 @@ dependencies = [
  "crossbeam 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "derivative 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
+ "futures 0.1.19 (registry+https://github.com/rust-lang/crates.io-index)",
  "hibitset 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "mopa 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "rayon 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3431,7 +3444,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "style"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "app_units 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "arrayvec 0.4.7 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3443,36 +3456,36 @@ dependencies = [
  "debug_unreachable 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "encoding_rs 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "fallible 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "fallible 0.0.1 (git+https://github.com/servo/servo)",
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "hashglobe 0.1.0 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "hashglobe 0.1.0 (git+https://github.com/servo/servo)",
  "html5ever 0.22.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "itertools 0.7.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "itertools 0.7.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "itoa 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
  "matches 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-integer 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-traits 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)",
  "ordered-float 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "owning_ref 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
- "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "parking_lot 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "precomputed-hash 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "rayon 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "selectors 0.19.0 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "selectors 0.19.0 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_arc 0.1.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_atoms 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_arc 0.1.1 (git+https://github.com/servo/servo)",
+ "servo_atoms 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_url 0.0.1 (git+https://github.com/servo/servo)",
  "smallbitvec 1.0.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "smallvec 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "string_cache 0.7.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "style_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "style_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "style_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "style_traits 0.0.1 (git+https://github.com/servo/servo)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "uluru 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "unicode-bidi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3484,7 +3497,7 @@ dependencies = [
 [[package]]
 name = "style_derive"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "darling 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "quote 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3495,18 +3508,18 @@ dependencies = [
 [[package]]
 name = "style_traits"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
  "app_units 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "cssparser 0.23.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "selectors 0.19.0 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "malloc_size_of 0.0.1 (git+https://github.com/servo/servo)",
+ "malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)",
+ "selectors 0.19.0 (git+https://github.com/servo/servo)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
- "servo_arc 0.1.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_atoms 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "servo_arc 0.1.1 (git+https://github.com/servo/servo)",
+ "servo_atoms 0.0.1 (git+https://github.com/servo/servo)",
  "webrender_api 0.57.0 (git+https://github.com/servo/webrender)",
 ]
 
@@ -3566,9 +3579,9 @@ dependencies = [
 [[package]]
 name = "task_info"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "gcc 0.3.54 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cc 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -3644,10 +3657,10 @@ dependencies = [
 
 [[package]]
 name = "tinyfiledialogs"
-version = "3.0.4"
+version = "3.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "gcc 0.3.54 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cc 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -3655,6 +3668,14 @@ dependencies = [
 name = "token_store"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "toml"
+version = "0.4.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
 [[package]]
 name = "traitobject"
@@ -3794,10 +3815,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "uuid"
-version = "0.5.1"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cfg-if 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rand 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -3906,10 +3928,10 @@ dependencies = [
 [[package]]
 name = "webrender"
 version = "0.57.0"
-source = "git+https://github.com/servo/webrender#0cf34e0b9d7c895984f4480fc0c308f0c036b81b"
+source = "git+https://github.com/servo/webrender#00b85801f8c09431e5963a9e1dcd1a9087b744b9"
 dependencies = [
  "app_units 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "bincode 0.9.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "bincode 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "core-foundation 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3919,7 +3941,7 @@ dependencies = [
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "freetype 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "fxhash 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "gleam 0.4.25 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gleam 0.4.28 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-traits 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3936,17 +3958,17 @@ dependencies = [
 [[package]]
 name = "webrender_api"
 version = "0.57.0"
-source = "git+https://github.com/servo/webrender#0cf34e0b9d7c895984f4480fc0c308f0c036b81b"
+source = "git+https://github.com/servo/webrender#00b85801f8c09431e5963a9e1dcd1a9087b744b9"
 dependencies = [
  "app_units 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "bincode 0.9.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "bincode 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "core-foundation 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "core-graphics 0.13.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "dwrote 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3955,26 +3977,26 @@ dependencies = [
 [[package]]
 name = "webvr"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "canvas_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "canvas_traits 0.0.1 (git+https://github.com/servo/servo)",
  "euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
  "rust-webvr 0.9.10 (registry+https://github.com/rust-lang/crates.io-index)",
- "script_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
- "webvr_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "script_traits 0.0.1 (git+https://github.com/servo/servo)",
+ "servo_config 0.0.1 (git+https://github.com/servo/servo)",
+ "webvr_traits 0.0.1 (git+https://github.com/servo/servo)",
 ]
 
 [[package]]
 name = "webvr_traits"
 version = "0.0.1"
-source = "git+https://github.com/moggers/servo?branch=enable-debugger#42d41e4d65f4e669a9532b57822c3256a77cfa69"
+source = "git+https://github.com/servo/servo#e8fdc677f440919507209ed42d0ea042c700042c"
 dependencies = [
- "ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)",
+ "ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "msg 0.0.1 (git+https://github.com/servo/servo)",
  "rust-webvr-api 0.9.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -4171,15 +4193,15 @@ dependencies = [
 "checksum backtrace-sys 0.1.16 (registry+https://github.com/rust-lang/crates.io-index)" = "44585761d6161b0f57afc49482ab6bd067e4edef48c12a152c237eb0203f7661"
 "checksum base64 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "96434f987501f0ed4eb336a411e0631ecd1afa11574fe148587adc4ff96143c9"
 "checksum binary-space-partition 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "88ceb0d16c4fd0e42876e298d7d3ce3780dd9ebdcbe4199816a32c77e08597ff"
-"checksum bincode 0.9.2 (registry+https://github.com/rust-lang/crates.io-index)" = "9a6301db0b49fb63551bc15b5ae348147101cdf323242b93ec7546d5002ff1af"
+"checksum bincode 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "bda13183df33055cbb84b847becce220d392df502ebe7a4a78d7021771ed94d0"
 "checksum bitflags 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "aad18937a628ec6abcd26d1489012cc0e18c21798210f491af69ded9b881106d"
 "checksum bitflags 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)" = "4efd02e230a02e18f92fc2735f44597385ed02ad8f831e7c1c1156ee5e1ab3a5"
 "checksum bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "b3c30d3802dfb7281680d6285f2ccdaa8c2d8fee41f93805dba5c4cf50dc23cf"
 "checksum bitreader 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "a13e712f6e04f0e507a913abf5e008ba2a342ec26d9fac34ba0766bd77ced5b8"
 "checksum block 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)" = "0d8c1fef690941d3e7788d328517591fecc684c084084702d6ff1641e993699a"
-"checksum bluetooth 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum bluetooth_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum blurdroid 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)" = "d7daba519d29beebfc7d302795af88a16b43f431b9b268586926ac61cc655a68"
+"checksum bluetooth 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum bluetooth_traits 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum blurdroid 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "3576c53cdaf0977fc65db25ffd38823174fb4a09b86fbeb20b98e04f38acf363"
 "checksum blurmac 0.1.0 (git+https://github.com/servo/devices)" = "<none>"
 "checksum blurmock 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "9c150fd617830fd121919bbd500a784507e8af1bae744efcf587591c65c375d4"
 "checksum blurz 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e73bda0f4c71c63a047351070097f3f507e6718e86b9ee525173371ef7b94b73"
@@ -4187,14 +4209,14 @@ dependencies = [
 "checksum brotli-decompressor 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "358f28e94689d14c621de44c6813555abeadf0c95c3e1f3f13943deb9eb98dc8"
 "checksum byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "652805b7e73fada9d85e9a6682a4abd490cb52d96aeecc12e33a0de34dfd0d23"
 "checksum bytes 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)" = "1b7db437d718977f6dc9b2e3fd6fc343c02ac6b899b73fdd2179163447bd9ce9"
-"checksum canvas 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum canvas_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum canvas 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum canvas_traits 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum caseless 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e3261638034d9db4f94a666ebb16494846341ae5a8456c05c1616d66980cf39a"
-"checksum cc 1.0.8 (registry+https://github.com/rust-lang/crates.io-index)" = "d9324127e719125ec8a16e6e509abc4c641e773621b50aea695af3f005656d61"
+"checksum cc 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)" = "2b4911e4bdcb4100c7680e7e854ff38e23f1b34d4d9e079efae3da2801341ffc"
 "checksum cfg-if 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "d4c819a1287eb618df47cc647173c5c4c66ba19d888a6e50d605672aed3140de"
 "checksum cgl 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "86765cb42c2a2c497e142af72517c1b4d7ae5bb2f25dfa77a5c69642f2342d89"
 "checksum cgmath 0.14.1 (registry+https://github.com/rust-lang/crates.io-index)" = "87f025a17ad3f30d49015c787903976d5f9cd6115ece1eb7f4d6ffe06b8c4080"
-"checksum cgmath 0.16.0 (registry+https://github.com/rust-lang/crates.io-index)" = "6f3f4e27f2647652606e9faab058dd8686513a23b276fcd16e85eb0927838ddc"
+"checksum cgmath 0.16.1 (registry+https://github.com/rust-lang/crates.io-index)" = "64a4b57c8f4e3a2e9ac07e0f6abc9c24b6fc9e1b54c3478cfb598f3d0023e51c"
 "checksum chrono 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "7c20ebe0b2b08b0aeddba49c609fe7957ba2e33449882cb186a180bc60682fa9"
 "checksum claxon 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "84d1237389598ada39533a0015b2d04a9e21cae771c1ab9327fb87520c9e84c7"
 "checksum clipboard 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)" = "b9b4623b47d8637fc9d47564583d4cc01eb8c8e34e26b2bf348bf4b036acb657"
@@ -4203,8 +4225,8 @@ dependencies = [
 "checksum cocoa 0.13.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ac0d785ff4faf0ff23d7b5561346bb50dc7ef9a11cb0e65e07ef776b7752938f"
 "checksum cocoa 0.14.0 (registry+https://github.com/rust-lang/crates.io-index)" = "b0c23085dde1ef4429df6e5896b89356d35cdd321fb43afe3e378d010bb5adc6"
 "checksum color_quant 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "a475fc4af42d83d28adf72968d9bcfaf035a1a9381642d8e85d8a04957767b0d"
-"checksum compositing 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum constellation 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum compositing 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum constellation 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum cookie 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)" = "746858cae4eae40fff37e1998320068df317bc247dc91a67c6cfa053afdc2abb"
 "checksum core-foundation 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)" = "8047f547cd6856d45b1cdd75ef8d2f21f3d0e4bf1dab0a0041b0ae9a5dda9c0e"
 "checksum core-foundation 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "286e0b41c3a20da26536c6000a280585d519fd07b3956b43aed8a79e9edce980"
@@ -4218,7 +4240,7 @@ dependencies = [
 "checksum cpal 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)" = "7c7ea57dd9260ee9faaccbf629648c4a00cf56a090dc26ebaf13ddbfe932261d"
 "checksum crossbeam 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "24ce9782d4d5c53674646a6a4c1863a21a8fc0cb649b3c94dfc16e45071dea19"
 "checksum crossbeam-deque 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "f739f8c5363aca78cfb059edf753d8f0d36908c348f3d8d1503f03d8b75d9cf3"
-"checksum crossbeam-epoch 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "59796cc6cbbdc6bb319161349db0c3250ec73ec7fcb763a51065ec4e2e158552"
+"checksum crossbeam-epoch 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "927121f5407de9956180ff5e936fe3cf4324279280001cd56b669d28ee7e9150"
 "checksum crossbeam-utils 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "2760899e32a1d58d5abb31129f8fae5de75220bc2176e77ff7c627ae45c918d9"
 "checksum cssparser 0.23.2 (registry+https://github.com/rust-lang/crates.io-index)" = "8a807ac3ab7a217829c2a3b65732b926b2befe6a35f33b4bf8b503692430f223"
 "checksum cssparser-macros 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "9ce714f82ed2ca0e026ee351b7f25b2d70f81cf6f0f3214537a2edb67cd4d4d0"
@@ -4227,16 +4249,16 @@ dependencies = [
 "checksum darling_macro 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "b4dd9575a972cd00cdd5c7f35668b4c2c11440b2f4216933d3e7d45065269e41"
 "checksum dbus 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)" = "acd824d45fad5ff0e178fcb3c040f13780e73f63a0a6d5cde59e7894f251ab0e"
 "checksum debug_unreachable 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "9a032eac705ca39214d169f83e3d3da290af06d8d1d344d1baad2fd002dca4b3"
-"checksum debugger 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum debugger 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum deflate 0.7.17 (registry+https://github.com/rust-lang/crates.io-index)" = "4dddda59aaab719767ab11d3efd9a714e95b610c4445d4435765021e9d52dfb1"
-"checksum deny_public_fields 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum deny_public_fields 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum derivative 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "67b3d6d0e84e53a5bdc263cc59340541877bb541706a191d762bfac6a481bdde"
 "checksum device 0.0.1 (git+https://github.com/servo/devices)" = "<none>"
-"checksum devtools 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum devtools_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum devtools 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum devtools_traits 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum dlib 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "77e51249a9d823a4cb79e3eca6dcd756153e8ed0157b6c04775d04bf1b13b76a"
-"checksum dom_struct 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum domobject_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum dom_struct 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum domobject_derive 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum draw_state 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "33cf9537e2d06891448799b96d5a8c8083e0e90522a7fdabe6ebf4f41d79d651"
 "checksum dtoa 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "09c3753c3db574d215cba4ea76018483895d7bff25a31b49ba45db21c48e50ab"
 "checksum dtoa-short 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "59020b8513b76630c49d918c33db9f4c91638e7d3404a28084083b87e33f76f2"
@@ -4249,7 +4271,7 @@ dependencies = [
 "checksum error-chain 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ff511d5dc435d703f4971bc399647c9bc38e20cb41452e3b9feb4765419ed3f3"
 "checksum euclid 0.17.2 (registry+https://github.com/rust-lang/crates.io-index)" = "adfe67a9343519c1449d208da5998c6de582de698f7a39c4ac82ffba23d131a5"
 "checksum expat-sys 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "c470ccb972f2088549b023db8029ed9da9426f5affbf9b62efff7009ab8ed5b1"
-"checksum fallible 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum fallible 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum fern 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)" = "50475651fccc56343c766e4d1889428ea753308a977e1315db358ada28cc8c9d"
 "checksum flate2 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)" = "e6234dd4468ae5d1e2dbb06fe2b058696fdc50a339c68a393aefbf00bc81e423"
 "checksum flate2 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "9fac2277e84e5e858483756647a9d0aa8d9a2b7cba517fd84325a0aaa69a0909"
@@ -4261,32 +4283,31 @@ dependencies = [
 "checksum fuchsia-zircon 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "2e9763c69ebaae630ba35f74888db465e49e259ba1bc0eda7d06f4a067615d82"
 "checksum fuchsia-zircon-sys 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "3dcaa9ae7725d12cdb85b3ad99a434db70b468c09ded17e012d86b5c1010f7a7"
 "checksum futf 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "51f93f3de6ba1794dcd5810b3546d004600a59a98266487c8407bc4b24e398f3"
-"checksum futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)" = "0bab5b5e94f5c31fc764ba5dd9ad16568aae5d4825538c01d6bca680c9bf94a7"
+"checksum futures 0.1.19 (registry+https://github.com/rust-lang/crates.io-index)" = "83f32b9e9aaa890fe8b9453b27ebbf3d11136a5ce59032500effd0e707bbcd80"
 "checksum fxhash 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "c31b6d751ae2c7f11320402d34e41349dd1016f8d5d45e48c4312bc8625af50c"
 "checksum gaol 0.2.0 (git+https://github.com/servo/gaol)" = "<none>"
-"checksum gcc 0.3.54 (registry+https://github.com/rust-lang/crates.io-index)" = "5e33ec290da0d127825013597dbdfc28bee4964690c7ce1166cbc2a7bd08b1bb"
 "checksum gdi32-sys 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "0912515a8ff24ba900422ecda800b52f4016a56251922d397c576bf92c690518"
 "checksum genmesh 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "4348c687395e1b5475e3e955d69b43c92d515e9e1f3b5496e6f88f8731561b66"
 "checksum getopts 0.2.17 (registry+https://github.com/rust-lang/crates.io-index)" = "b900c08c1939860ce8b54dc6a89e26e00c04c380fd0e09796799bd7f12861e05"
-"checksum gfx 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum gfx 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum gfx 0.17.1 (registry+https://github.com/rust-lang/crates.io-index)" = "7d7ce0c1f747245342a73453fdb098ea0764c430421fbc4d98cdc8ef8ede4834"
 "checksum gfx_core 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)" = "d85039b7bda0348fee728e6787876138839ced69650129ab65aee7ee58fc6367"
 "checksum gfx_device_gl 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)" = "28db9b21971721a57ab0f7a751a58dc8c50bede80c914533ad94fd664377925d"
 "checksum gfx_gl 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3e8a920f8f6c1025a7ddf9dd25502bf059506fd3cd765dfbe8dba0b56b7eeecb"
 "checksum gfx_glyph 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)" = "d06682b5ff9d6216ae531eb12c0ad727e205bf82641b86886cb5fbda360f2b80"
 "checksum gfx_macros 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "d38f9e1d3f4705b26e73437e35fd71c955aba5781f6bb5391d37a166204d301f"
-"checksum gfx_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum gfx_traits 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum gfx_window_glutin 0.20.0 (registry+https://github.com/rust-lang/crates.io-index)" = "73aec7a95849ce5f1de58d8fa032e4310d1e9f988f43ce2ab3ba8ea6430acd2b"
 "checksum gif 0.9.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e2e41945ba23db3bf51b24756d73d81acb4f28d85c3dccc32c6fae904438c25f"
 "checksum gl_generator 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "4f5c19cde55637681450c92f7a05ea16c78e2b6d0587e601ec1ebdab6960854b"
 "checksum gl_generator 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "7a795170cbd85b5a7baa58d6d7525cae6a03e486859860c220f7ebbbdd379d0a"
-"checksum gleam 0.4.25 (registry+https://github.com/rust-lang/crates.io-index)" = "449a5bf6a773d53c4e5a3a2a928b7fea5cb0c7a42fe3668033fef28cdb54e808"
+"checksum gleam 0.4.28 (registry+https://github.com/rust-lang/crates.io-index)" = "0afb2d0a8283b336c9569b1dead35415f550dcf1d4f3b970b507f7373d0be626"
 "checksum glutin 0.12.2 (registry+https://github.com/rust-lang/crates.io-index)" = "247f825056c99961b6e6e0baef17ca586a50109ab4bba2b370babe1c5d702943"
 "checksum glutin 0.13.1 (registry+https://github.com/rust-lang/crates.io-index)" = "90de8e0391e57098acfbfe693b23065e9186255d370ebae12c933b7d77df8424"
 "checksum glx 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "63a6e7c2846e12626455f45ebaff9d92161436dd0fa703d9d198012e528ca7b9"
 "checksum half 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "1d5c5f71a723d10dfc58927cbed37c3071a50afc7f073d86fd7d3e5727db890f"
 "checksum harfbuzz-sys 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)" = "52aa65c5649a0a2f1b27ab30093b3cc84681e17ddb552267e21948c5a6fa6b05"
-"checksum hashglobe 0.1.0 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum hashglobe 0.1.0 (git+https://github.com/servo/servo)" = "<none>"
 "checksum heartbeats-simple 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "78bef7dfbf1dbfa968260a57d59f5bb9078625593c35d5a4a3dc78dd4f86e28b"
 "checksum heartbeats-simple-sys 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)" = "29f06e482fdc3f29015d288ad63bc5e855ffca0830866550a08b29e55924c935"
 "checksum hetseq 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "dbe13b9e03ea85e9efb4cd214c760399619f5e9ad0b36d8656b6649f03645063"
@@ -4307,18 +4328,19 @@ dependencies = [
 "checksum influent 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "9bc265d6f1f53ae16fd3c18cc737c8c91ec1381afc6a15bee35fecd16a83070e"
 "checksum io-surface 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "623ace1e5f7de3512ec45302572a72349fdadcbef650c3dfc5d8244209be7653"
 "checksum iovec 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "dbe6e417e7d0975db6512b90796e8ce223145ac4e33c377e4a42882a0e88bb08"
-"checksum ipc-channel 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)" = "8a5cddad3b796bb3762d43cd8beaad6650860225b1b370ef5f8d3503f4dc0462"
+"checksum ipc-channel 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "db9daf099728ac5390c73f54e6e3708f0c514d2b51f24373830f568702eadfca"
 "checksum itertools 0.5.10 (registry+https://github.com/rust-lang/crates.io-index)" = "4833d6978da405305126af4ac88569b5d71ff758581ce5a987dbfa3755f694fc"
-"checksum itertools 0.7.7 (registry+https://github.com/rust-lang/crates.io-index)" = "23d53b4c7394338044c3b9c8c5b2caaf7b40ae049ecd321578ebdc2e13738cd1"
+"checksum itertools 0.7.8 (registry+https://github.com/rust-lang/crates.io-index)" = "f58856976b776fedd95533137617a02fb25719f40e7d9b01c7043cd65474f450"
 "checksum itoa 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)" = "8324a32baf01e2ae060e9de58ed0bc2320c9a2833491ee36cd3b4c414de4db8c"
+"checksum itoa 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "c069bbec61e1ca5a596166e55dfe4773ff745c3d16b700013bcaff9a6df2c682"
 "checksum jpeg-decoder 0.1.14 (registry+https://github.com/rust-lang/crates.io-index)" = "0dfe27a6c0dabd772d0f9b9f8701c4ca12c4d1eebcadf2be1f6f70396f6a1434"
-"checksum jstraceable_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum jstraceable_derive 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "7507624b29483431c0ba2d82aece8ca6cdba9382bff4ddd0f7490560c056098d"
 "checksum khronos_api 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "d9ef23fcc4059260c5936f638c9805ebfc87cb172fa6661d130cba7f97d58f55"
 "checksum language-tags 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "a91d884b6667cd606bb5a69aa0c99ba811a115fc68915e7056ec08a46e93199a"
-"checksum layout 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum layout_thread 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum layout_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum layout 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum layout_thread 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum layout_traits 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum lazy_static 0.1.16 (registry+https://github.com/rust-lang/crates.io-index)" = "cf186d1a8aa5f5bee5fd662bc9c1b949e0259e1bcc379d1f006847b0080c7417"
 "checksum lazy_static 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)" = "76f033c7ad61445c5b347c7382dd1237847eb1bce590fe50365dcb33d546be73"
 "checksum lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "c8f31047daa365f19be14b47c29df4f7c3b581832407daabe6ae77397619237d"
@@ -4329,7 +4351,7 @@ dependencies = [
 "checksum libc 0.2.39 (registry+https://github.com/rust-lang/crates.io-index)" = "f54263ad99207254cf58b5f701ecb432c717445ea2ee8af387334bdd1a03fdff"
 "checksum libdbus-sys 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "8720f9274907052cb50313f91201597868da9d625f8dd125f2aca5bddb7e83a1"
 "checksum libloading 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "9c3ad660d7cb8c5822cd83d10897b0f1f1526792737a179e73896152f85b88c2"
-"checksum libservo 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum libservo 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum libz-sys 1.0.18 (registry+https://github.com/rust-lang/crates.io-index)" = "87f737ad6cc6fd6eefe3d9dc5412f1573865bded441300904d2f42269e140f16"
 "checksum linked-hash-map 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "70fb39025bc7cdd76305867c4eccf2f2dcf6e9a57f5b21a93e1c2d86cd03ec9e"
 "checksum log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)" = "e19e8d5c34a3e0e2223db8e060f9e8264aeeb5c5fc64a4ee9965c062211c024b"
@@ -4337,15 +4359,15 @@ dependencies = [
 "checksum lzw 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "7d947cbb889ed21c2a84be6ffbaebf5b4e0f4340638cba0444907e38b56be084"
 "checksum mac 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "c41e0c4fef86961ac6d6f8a82609f55f31b05e4fce149ac5710e439df7619ba4"
 "checksum malloc_buf 0.0.6 (registry+https://github.com/rust-lang/crates.io-index)" = "62bb907fe88d54d8d9ce32a3cceab4218ed2f6b7d35617cafe9adf84e43919cb"
-"checksum malloc_size_of 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum malloc_size_of_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum malloc_size_of 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum malloc_size_of_derive 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum markup5ever 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)" = "bfedc97d5a503e96816d10fedcd5b42f760b2e525ce2f7ec71f6a41780548475"
 "checksum matches 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)" = "100aabe6b8ff4e4a7e32c1c13523379802df0772b82466207ac25b013f193376"
 "checksum memchr 0.1.11 (registry+https://github.com/rust-lang/crates.io-index)" = "d8b629fb514376c675b98c1421e80b151d3817ac42d7c667717d282761418d20"
 "checksum memchr 2.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "796fba70e76612589ed2ce7f45282f5af869e0fdd7cc6199fa1aa1f1d591ba9d"
 "checksum memmap 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e2ffa2c986de11a9df78620c01eeaaf27d94d3ff02bf81bfcca953102dd0c6ff"
 "checksum memoffset 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "0f9dc261e2b62d7a622bf416ea3c5245cdd5d9a7fcc428c0d06804dfce1775b3"
-"checksum metrics 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum metrics 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum mime 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)" = "ba626b8a6de5da682e1caa06bdb42a335aee5a84db8e5046a3e8ab17ba0a3ae0"
 "checksum mime_guess 1.8.4 (registry+https://github.com/rust-lang/crates.io-index)" = "b7e2b09d08313f84e0fb82d13a4d859109a17543fe9af3b6d941dc1431f7de79"
 "checksum miniz-sys 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)" = "609ce024854aeb19a0ef7567d348aaa5a746b32fb72e336df7fcc16869d7e2b4"
@@ -4356,22 +4378,22 @@ dependencies = [
 "checksum mitochondria 1.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "9de3eca27871df31c33b807f834b94ef7d000956f57aa25c5aed9c5f0aae8f6f"
 "checksum mopa 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "a785740271256c230f57462d3b83e52f998433a7062fc18f96d5999474a9f915"
 "checksum mozangle 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)" = "1f0583e6792917f498bb3a7440f777a59353102063445ab7f5e9d1dc4ed593aa"
-"checksum mozjs 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "79645a302ffcef7ca2673ff4db4d4273b87671dd0de4d53da889b664dd555e74"
+"checksum mozjs 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "4463834f4d4ffcf2a54706c8a202e25ddac3f142e3eccc4aebade58fa62bc1ff"
 "checksum mozjs_sys 0.50.1 (registry+https://github.com/rust-lang/crates.io-index)" = "e61a792a125b1364c5ec50255ed8343ce02dc56098f8868dd209d472c8de006a"
 "checksum mp3-metadata 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "4ab5f1d2693586420208d1200ce5a51cd44726f055b635176188137aff42c7de"
 "checksum mp4parse 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)" = "f821e3799bc0fd16d9b861fb02fa7ee1b5fba29f45ad591dade105c48ca9a1a0"
-"checksum msg 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum net 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum msg 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum net 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum net2 0.2.32 (registry+https://github.com/rust-lang/crates.io-index)" = "9044faf1413a1057267be51b5afba8eb1090bd2231c693664aa1db716fe1eae0"
-"checksum net_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum net_traits 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum nodrop 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)" = "9a2228dca57108069a5262f2ed8bd2e82496d2e074a06d1ccc7ce1687b6ae0a2"
-"checksum nonzero 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum nonzero 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum num 0.1.42 (registry+https://github.com/rust-lang/crates.io-index)" = "4703ad64153382334aa8db57c637364c322d3372e097840c72000dabdcf6156e"
 "checksum num-integer 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)" = "f8d26da319fb45674985c78f1d1caf99aa4941f785d384a2ae36d0740bc3e2fe"
 "checksum num-iter 0.1.35 (registry+https://github.com/rust-lang/crates.io-index)" = "4b226df12c5a59b63569dd57fafb926d91b385dfce33d8074a412411b689d593"
 "checksum num-rational 0.1.42 (registry+https://github.com/rust-lang/crates.io-index)" = "ee314c74bd753fc86b4780aa9475da469155f3848473a261d2d18e35245a784e"
 "checksum num-traits 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)" = "92e5113e9fd4cc14ded8e499429f396a20f98c772a47cc8622a736e1ec843c31"
-"checksum num-traits 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "0b3c2bd9b9d21e48e956b763c9f37134dc62d9e95da6edb3f672cacb6caf3cd3"
+"checksum num-traits 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "dee092fcdf725aee04dd7da1d21debff559237d49ef1cb3e69bcb8ece44c7364"
 "checksum num_cpus 1.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "c51a3322e4bca9d212ad9a158a02abc6934d005490c054a2778df73a70aa0a30"
 "checksum objc 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "877f30f37acef6749b1841cceab289707f211aecfc756553cd63976190e6cc2e"
 "checksum objc-foundation 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "1add1b659e36c9607c7aab864a76c7a4c2760cd0cd2e120f3fb8b952c7e22bf9"
@@ -4389,6 +4411,7 @@ dependencies = [
 "checksum osmesa-sys 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "88cfece6e95d2e717e0872a7f53a8684712ad13822a7979bc760b9c77ec0013b"
 "checksum owning_ref 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "cdf84f41639e037b484f93433aa3897863b561ed65c6e59c7073d7c561710f37"
 "checksum parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)" = "149d8f5b97f3c1133e3cfcd8886449959e856b557ff281e292b733d7c69e005e"
+"checksum parking_lot 0.5.4 (registry+https://github.com/rust-lang/crates.io-index)" = "9fd9d732f2de194336fb02fe11f9eed13d9e76f13f4315b4d88a14ca411750cd"
 "checksum parking_lot_core 0.2.13 (registry+https://github.com/rust-lang/crates.io-index)" = "538ef00b7317875071d5e00f603f24d16f0b474c1a5fc0ccb8b454ca72eafa79"
 "checksum percent-encoding 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "31010dd2e1ac33d5b46a5b413495239882813e0369f8ed8a5e266f173602f831"
 "checksum phf 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)" = "cb325642290f28ee14d8c6201159949a872f220c62af6e110a56ea914fbe42fc"
@@ -4401,15 +4424,15 @@ dependencies = [
 "checksum precomputed-hash 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "925383efa346730478fb4838dbe9137d2a47675ad789c546d150a6e1dd4ab31c"
 "checksum proc-macro2 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "cd07deb3c6d1d9ff827999c7f9b04cdfd66b1b17ae508e14fe47b620f2282ae0"
 "checksum procedural-masquerade 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "dc1bcafee1590f81acb329ae45ec627b318123f085153913620316ae9a144b2a"
-"checksum profile 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum profile_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum profile 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum profile_traits 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum pulse 0.5.3 (registry+https://github.com/rust-lang/crates.io-index)" = "655612b6c8d96a8a02f331fe296cb4f925b68e87c1d195544675abca2d9b9af0"
 "checksum quickcheck 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "02c2411d418cea2364325b18a205664f9ef8252e06b2e911db97c0b0d98b1406"
 "checksum quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)" = "7a6e920b65c65f10b2ae65c831a81a073a89edd28c7cce89475bff467ab4167a"
 "checksum quote 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "1eca14c727ad12702eb4b6bfb5a232287dcf8385cb8ca83a3eeaf6519c44c408"
 "checksum rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)" = "15a732abf9d20f0ad8eeb6f909bf6868722d9a06e1e50802b6a70351f40b4eb1"
 "checksum rand 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "eba5f8cb59cc50ed56be8880a5c7b496bfd9bd26394e176bc67884094145c2c5"
-"checksum range 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum range 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum rayon 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)" = "b614fe08b6665cb9a231d07ac1364b0ef3cb3698f1239ee0c4c3a88a524f54c8"
 "checksum rayon 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "80e811e76f1dbf68abf87a759083d34600017fc4e10b6bd5ad84a700f9dba4b1"
 "checksum rayon-core 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "9d24ad214285a7729b174ed6d3bcfcb80177807f959d95fafd5bfc5c4f201ac8"
@@ -4428,36 +4451,36 @@ dependencies = [
 "checksum rustc-serialize 0.3.24 (registry+https://github.com/rust-lang/crates.io-index)" = "dcf128d1287d2ea9d80910b5f1120d0b8eede3fbf1abe91c40d39ea7d51e6fda"
 "checksum rustc_version 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)" = "c5f5376ea5e30ce23c03eb77cbe4962b988deead10910c372b226388b594c084"
 "checksum rustc_version_runtime 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "90811d74046aca9c061fb9f7f2568c61696b7f218a7baad60a0f2ccae90efbd2"
-"checksum rusttype 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "24f3d32ca1619041480bd0b4756963762369f1d3f2fcc212c4877042f867b4ca"
+"checksum rusttype 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)" = "11ff03da02f6d340bbee5ec55eed03ff9abd6ea013b93bc7c35973cc28f65999"
 "checksum safemem 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e27a8b19b835f7aea908818e871f5cc3a5a186550c30773be987e155e8163d8f"
 "checksum same-file 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "d931a44fdaa43b8637009e7632a02adc4f2b2e0733c08caa4cf00e8da4a117a7"
 "checksum scoped_threadpool 0.1.9 (registry+https://github.com/rust-lang/crates.io-index)" = "1d51f5df5af43ab3f1360b429fa5e0152ac5ce8c0bd6485cae490332e96846a8"
 "checksum scopeguard 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "94258f53601af11e6a49f722422f6e3425c52b06245a5cf9bc09908b174f5e27"
-"checksum script 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum script_layout_interface 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum script_plugins 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum script_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum selectors 0.19.0 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum script 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum script_layout_interface 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum script_plugins 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum script_traits 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum selectors 0.19.0 (git+https://github.com/servo/servo)" = "<none>"
 "checksum semver 0.1.20 (registry+https://github.com/rust-lang/crates.io-index)" = "d4f410fedcf71af0345d7607d246e7ad15faaadd49d240ee3b24e5dc21a820ac"
 "checksum serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)" = "db99f3919e20faa51bb2996057f5031d8685019b5a06139b1ce761da671b8526"
 "checksum serde_bytes 0.10.3 (registry+https://github.com/rust-lang/crates.io-index)" = "52b678af90a3aebc4484c22d639bf374eb7d598988edb33fa73c4febd6046a59"
 "checksum serde_derive 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)" = "f4ba7591cfe93755e89eeecdbcc668885624829b020050e6aec99c2a03bd3fd0"
 "checksum serde_derive_internals 0.19.0 (registry+https://github.com/rust-lang/crates.io-index)" = "6e03f1c9530c3fb0a0a5c9b826bdd9246a5921ae995d75f512ac917fc4dd55b5"
-"checksum serde_json 1.0.11 (registry+https://github.com/rust-lang/crates.io-index)" = "fab6c4d75bedcf880711c85e39ebf8ccc70d0eba259899047ec5d7436643ee17"
+"checksum serde_json 1.0.13 (registry+https://github.com/rust-lang/crates.io-index)" = "5c508584d9913df116b91505eec55610a2f5b16e9ed793c46e4d0152872b3e74"
 "checksum servo-egl 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "21069a884c33fe6ee596975e1f3849ed88c4ec857fbaf11d33672d8ebe051217"
 "checksum servo-fontconfig 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "93f799b649b4a2bf362398910eca35240704c7e765e780349b2bb1070d892262"
 "checksum servo-fontconfig-sys 4.0.4 (registry+https://github.com/rust-lang/crates.io-index)" = "38b494f03009ee81914b0e7d387ad7c145cafcd69747c2ec89b0e17bb94f303a"
 "checksum servo-freetype-sys 4.0.3 (registry+https://github.com/rust-lang/crates.io-index)" = "9232032c2e85118c0282c6562c84cab12316e655491ba0a5d1905b2320060d1b"
 "checksum servo-skia 0.30000013.1 (registry+https://github.com/rust-lang/crates.io-index)" = "3fb707c7dc3d8a053b8c9d48ed9eb7f2a0c0751616dfbe3598f526948408bc33"
-"checksum servo-websocket 0.20.1 (registry+https://github.com/rust-lang/crates.io-index)" = "6381c211d5c2de3c921661defb9803a8be7fb617a2f5abf2938ecb555ddced99"
-"checksum servo_allocator 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum servo_arc 0.1.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum servo_atoms 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum servo_config 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum servo_geometry 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum servo_rand 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum servo_remutex 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum servo_url 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum servo-websocket 0.21.0 (registry+https://github.com/rust-lang/crates.io-index)" = "6bac1e2295e72f0525147d993c626761811acf0441dac1cee8707f12dc7f3363"
+"checksum servo_allocator 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum servo_arc 0.1.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum servo_atoms 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum servo_config 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum servo_geometry 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum servo_rand 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum servo_remutex 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum servo_url 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum sha1 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "cc30b1e1e8c40c121ca33b86c23308a090d19974ef001b4bf6e61fd1a0fb095c"
 "checksum shared_library 0.1.8 (registry+https://github.com/rust-lang/crates.io-index)" = "8254bf098ce4d8d7cc7cc6de438c5488adc5297e5b7ffef88816c0a91bd289c1"
 "checksum shred 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)" = "7d3abceaa9d0a9b47ab84b53c6029c21bcad7d7dd63e14db51ea0680faee2159"
@@ -4476,16 +4499,16 @@ dependencies = [
 "checksum string_cache 0.7.1 (registry+https://github.com/rust-lang/crates.io-index)" = "39cb4173bcbd1319da31faa5468a7e3870683d7a237150b0b0aaafd546f6ad12"
 "checksum string_cache_codegen 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "479cde50c3539481f33906a387f2bd17c8e87cb848c35b6021d41fb81ff9b4d7"
 "checksum string_cache_shared 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "b1884d1bc09741d466d9b14e6d37ac89d6909cbcac41dd9ae982d4d063bbedfc"
-"checksum style 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum style_derive 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum style_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum style 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum style_derive 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum style_traits 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum swapper 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e454d048db5527d000bfddb77bd072bbf3a1e2ae785f16d9bd116e07c2ab45eb"
 "checksum syn 0.10.8 (registry+https://github.com/rust-lang/crates.io-index)" = "58fd09df59565db3399efbba34ba8a2fec1307511ebd245d0061ff9d42691673"
 "checksum syn 0.11.11 (registry+https://github.com/rust-lang/crates.io-index)" = "d3b891b9015c88c576343b9b3e41c2c11a51c219ef067b264bd9c8aa9b441dad"
 "checksum syn 0.12.14 (registry+https://github.com/rust-lang/crates.io-index)" = "8c5bc2d6ff27891209efa5f63e9de78648d7801f085e4653701a692ce938d6fd"
 "checksum synom 0.11.3 (registry+https://github.com/rust-lang/crates.io-index)" = "a393066ed9010ebaed60b9eafa373d4b1baac186dd7e008555b0f702b51945b6"
 "checksum synstructure 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "010366096045d8250555904c58da03377289e7f4b2ce7a5b1027e2b532f41000"
-"checksum task_info 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum task_info 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum tempfile 2.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "11ce2fe9db64b842314052e2421ac61a73ce41b898dc8e3750398b219c5fc1e0"
 "checksum tendril 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "9de21546595a0873061940d994bbbc5c35f024ae4fd61ec5c5b159115684f508"
 "checksum thread-id 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "a9539db560102d1cef46b8b78ce737ff0bb64e7e18d35b2a5688f7d097d0ff03"
@@ -4494,8 +4517,9 @@ dependencies = [
 "checksum thread_profiler 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "5920e77802b177479ab5795767fa48e68f61b2f516c2ac0041e2978dd8efe483"
 "checksum threadpool 1.7.1 (registry+https://github.com/rust-lang/crates.io-index)" = "e2f0c90a5f3459330ac8bc0d2f879c693bb7a2f59689c1083fc4ef83834da865"
 "checksum time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)" = "a15375f1df02096fb3317256ce2cee6a1f42fc84ea5ad5fc8c421cfe40c73098"
-"checksum tinyfiledialogs 3.0.4 (registry+https://github.com/rust-lang/crates.io-index)" = "d92a5f7395a9e2895a2361c3121d4a0be0f8dac3be7d91841a5c1c5291b1c6dc"
+"checksum tinyfiledialogs 3.3.5 (registry+https://github.com/rust-lang/crates.io-index)" = "d79833ca2c493c726ea6a7b651ba0ff8a790add5156cd11bf3743f346005c0c8"
 "checksum token_store 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "a686838375fc11103b9c1529c6508320b7bd5e2401cd62831ca51b3e82e61849"
+"checksum toml 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)" = "a7540f4ffc193e0d3c94121edb19b055670d369f77d5804db11ae053a45b6e7e"
 "checksum traitobject 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "efd1f82c56340fdf16f2a953d7bda4f8fdffba13d93b00844c25572110b26079"
 "checksum truetype 0.26.2 (registry+https://github.com/rust-lang/crates.io-index)" = "6a4557422979ca99d0ffebef23d01185dde76153f09aa2840863ed60ad8e2fec"
 "checksum tuple_utils 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "cbfecd7bb8f0a3e96b3b31c46af2677a55a588767c0091f484601424fcb20e7e"
@@ -4517,7 +4541,7 @@ dependencies = [
 "checksum utf-8 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)" = "f1262dfab4c30d5cb7c07026be00ee343a6cf5027fdc0104a9160f354e5db75c"
 "checksum utf8-ranges 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "a1ca13c08c41c9c3e04224ed9ff80461d97e121589ff27c753a16cb10830ae0f"
 "checksum utf8-ranges 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "662fab6525a98beff2921d7f61a39e7d59e0b425ebc7d0d9e66d316e55124122"
-"checksum uuid 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "bcc7e3b898aa6f6c08e5295b6c89258d1331e9ac578cc992fb818759951bdc22"
+"checksum uuid 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)" = "d4670e1e935f7edd193a413f802e2ee52274aed62a09ccaab1656515c9c53a66"
 "checksum vcpkg 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "9e0a7d8bed3178a8fb112199d466eeca9ed09a14ba8ad67718179b4fd5487d0b"
 "checksum vergen 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "8c3365f36c57e5df714a34be40902b27a992eeddb9996eca52d0584611cf885d"
 "checksum version_check 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "6b772017e347561807c1aa192438c5fd74242a670a6cffacc40f2defd1dc069d"
@@ -4532,8 +4556,8 @@ dependencies = [
 "checksum wayland-window 0.13.2 (registry+https://github.com/rust-lang/crates.io-index)" = "2d94d3c23f8f2e0a09d82c6ca765da3c1efe65ef0280f750d74a6c6c6bb4ca8f"
 "checksum webrender 0.57.0 (git+https://github.com/servo/webrender)" = "<none>"
 "checksum webrender_api 0.57.0 (git+https://github.com/servo/webrender)" = "<none>"
-"checksum webvr 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
-"checksum webvr_traits 0.0.1 (git+https://github.com/moggers/servo?branch=enable-debugger)" = "<none>"
+"checksum webvr 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
+"checksum webvr_traits 0.0.1 (git+https://github.com/servo/servo)" = "<none>"
 "checksum winapi 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)" = "167dc9d6949a9b857f3451275e911c3f44255842c1f7a76f33c55103a909087a"
 "checksum winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)" = "04e3bd221fcbe8a271359c04f21a76db7d0c6028862d1bb5512d85e1e2eb5bb3"
 "checksum winapi-build 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "2d315eee3b34aca4797b2da6b13ed88266e6d612562a0c46390af8299fc699bc"

@@ -1,26 +1,32 @@
-extern crate glutin;
-extern crate servo as libservo;
-use self::libservo::gl;
-use self::libservo::Servo;
-use self::glutin::{GlContext, GlWindow, WindowEvent as GlutinWindowEvent};
-use self::libservo::servo_config::resource_files::set_resources_path;
-use self::libservo::servo_config::opts;
-use self::libservo::ipc_channel::ipc;
-use self::libservo::servo_url::ServoUrl;
-use self::libservo::compositing::windowing::WindowEvent;
+use libservo::{gl, Servo};
+use glutin::{GlContext, GlWindow};
+use libservo::servo_config::resource_files::set_resources_path;
+use libservo::servo_config::opts;
+use libservo::ipc_channel::ipc;
+use libservo::servo_url::ServoUrl;
+use libservo::msg::constellation_msg::TopLevelBrowsingContextId;
+use libservo::compositing::windowing::WindowEvent;
 
 use std::env;
 use std::sync::{Arc, Mutex};
 use std::rc::Rc;
-use amethyst::prelude::World;
-use amethyst::renderer::ScreenDimensions;
 use amethyst::winit::EventsLoopProxy;
+use amethyst::ecs::{Component, VecStorage};
 
 use super::ServoWindow;
 
 pub struct ServoHandle {
-    pub window: Rc<ServoWindow>,
     pub servo: Servo<ServoWindow>,
+    pub window: Rc<ServoWindow>,
+    pub id: TopLevelBrowsingContextId,
+}
+
+/// FIXME: YOU'RE GOING TO KILL SOMEONE
+unsafe impl Sync for ServoHandle {}
+unsafe impl Send for ServoHandle {}
+
+impl Component for ServoHandle {
+    type Storage = VecStorage<ServoHandle>;
 }
 
 impl ServoHandle {
@@ -28,26 +34,22 @@ impl ServoHandle {
         self.servo.handle_events(vec![]);
     }
 
-    pub fn forward_events(&mut self, events: Vec<GlutinWindowEvent>) {
-        let events: Vec<WindowEvent> = events
-            .iter()
-            .map(|e| match e {
-                &GlutinWindowEvent::Resized(x, y) => {
-                    self.window.set_dimensions(x, y);
-                    WindowEvent::Resize
-                }
-                _ => WindowEvent::Idle,
-            })
-            .collect();
-        self.servo.handle_events(events);
+    pub fn navigate(&mut self, url: &str) -> Result<(), String> {
+        match ServoUrl::parse(url) {
+            Ok(url) => {
+                self.servo
+                    .handle_events(vec![WindowEvent::LoadUrl(self.id, url)]);
+                Ok(())
+            }
+            Err(e) => Err(format!("Failed to parse URL: {}", e)),
+        }
     }
 }
 
 impl ServoHandle {
-    pub fn start_servo(world: &World) -> ServoHandle {
+    pub fn start_servo(window: &Arc<GlWindow>, events: &EventsLoopProxy, url: &str) -> ServoHandle {
         // Fetch gl context
         let gl = unsafe {
-            let window = world.read_resource::<Arc<GlWindow>>();
             window
                 .context()
                 .make_current()
@@ -55,16 +57,10 @@ impl ServoHandle {
             gl::GlFns::load_with(|s| window.context().get_proc_address(s) as *const _)
         };
 
-        // Dimensions
-        let screen_dimensions = world.read_resource::<ScreenDimensions>();
-
-        // Fetch window
-        let window = world.read_resource::<Arc<GlWindow>>();
-
         // Create renderer
         let renderer = Rc::new(ServoWindow {
             gl: gl,
-            waker: world.read_resource::<EventsLoopProxy>().clone(),
+            waker: events.clone(),
             window: window.clone(),
             dimensions: Arc::new(Mutex::new((1024, 1024))),
             target_texture: Arc::new(Mutex::new(None)),
@@ -73,9 +69,6 @@ impl ServoHandle {
 
         // Get resources
         let path = env::current_dir().unwrap().join("resources");
-        let mut url = "file://".to_string();
-        url.push_str(&path.to_str().unwrap());
-        url.push_str("/index.html");
         set_resources_path(Some(path.to_str().unwrap().to_string()));
         let mut opts = opts::default_opts();
         opts.dump_display_list = true;
@@ -92,8 +85,9 @@ impl ServoHandle {
         servo.handle_events(vec![WindowEvent::SelectBrowser(id)]);
 
         ServoHandle {
-            servo: servo,
             window: renderer.clone(),
+            servo: servo,
+            id: id,
         }
     }
 }
