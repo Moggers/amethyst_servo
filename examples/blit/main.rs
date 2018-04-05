@@ -1,39 +1,30 @@
-//! Displays spheres with physically based materials.
-
 extern crate amethyst;
 extern crate amethyst_servo;
 extern crate genmesh;
 extern crate hibitset;
 
-use amethyst::assets::Loader;
-use amethyst::core::cgmath::{Deg, Matrix4, Vector3};
+use amethyst::core::cgmath::{Deg, Matrix4};
 use amethyst::core::transform::GlobalTransform;
 use amethyst::prelude::*;
 use amethyst::renderer::*;
-use genmesh::{MapToVertices, Triangulate, Vertex, Vertices};
-use genmesh::generators::Plane;
-use amethyst_servo::{ServoSize, ServoUiBundle, ServoUrl};
+use amethyst_servo::{ServoBlit, ServoPass, ServoSize, ServoUiBundle, ServoUrl};
 
 struct Example;
 
 impl State for Example {
     fn on_start(&mut self, world: &mut World) {
         println!("Create servo");
-        let (mesh, material) = {
-            let verts = gen_plane().into();
-            let loader = world.read_resource::<Loader>();
-            let meshes = world.read_resource();
-
-            let mesh: MeshHandle = loader.load_from_data(verts, (), &meshes);
-            (mesh, world.read_resource::<MaterialDefaults>().0.clone())
-        };
-        let pos = Matrix4::from_translation([0., 0., 0.].into());
+        let material = { world.read_resource::<MaterialDefaults>().0.clone() };
         world
             .create_entity()
-            .with::<ServoUrl>("https://www.servo.org".into())
+            .with::<ServoUrl>(
+                format!(
+                    "file://{}/examples/assets/test.html",
+                    env!("CARGO_MANIFEST_DIR")
+                ).into(),
+            )
             .with::<ServoSize>((1024, 1024).into())
-            .with(GlobalTransform(pos.into()))
-            .with(mesh.clone())
+            .with(ServoBlit {})
             .with(material)
             .build();
 
@@ -75,7 +66,7 @@ impl State for Example {
 
 fn run() -> Result<(), amethyst::Error> {
     let path = format!(
-        "{}/examples/material/resources/display_config.ron",
+        "{}/examples/blit/resources/display_config.ron",
         env!("CARGO_MANIFEST_DIR")
     );
     let config = DisplayConfig::load(&path);
@@ -85,7 +76,8 @@ fn run() -> Result<(), amethyst::Error> {
     let pipe = Pipeline::build().with_stage(
         Stage::with_backbuffer()
             .clear_target([0.0, 0.0, 0.0, 1.0], 1.0)
-            .with_pass(DrawPbm::<PosNormTangTex>::new()),
+            .with_pass(DrawPbm::<PosNormTangTex>::new())
+            .with_pass(ServoPass::new()),
     );
     let mut game = Application::build(&resources, Example)?
         .with_bundle(RenderBundle::new(pipe, Some(config)))?
@@ -100,33 +92,4 @@ fn main() {
         println!("Failed to execute example: {}", e);
         ::std::process::exit(1);
     }
-}
-
-fn gen_plane() -> Vec<PosNormTangTex> {
-    Plane::new()
-        .vertex(|vertex: Vertex| {
-            let normal = Vector3::from([0., 0., -1.]);
-            let up = Vector3::from([0.0, 1.0, 0.0]);
-            let tangent = normal.cross(up).cross(normal);
-            PosNormTangTex {
-                position: vertex.pos,
-                normal: normal.into(),
-                tangent: tangent.into(),
-                tex_coord: [
-                    if vertex.pos[0] < 0. {
-                        0.
-                    } else {
-                        vertex.pos[0]
-                    },
-                    if vertex.pos[1] < 0. {
-                        0.
-                    } else {
-                        vertex.pos[1]
-                    },
-                ],
-            }
-        })
-        .triangulate()
-        .vertices()
-        .collect()
 }

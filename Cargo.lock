@@ -166,6 +166,7 @@ name = "amethyst_servo"
 version = "0.1.0"
 dependencies = [
  "amethyst 0.6.0 (git+https://github.com/moggers/amethyst?branch=expose-glwindow)",
+ "draw_state 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "genmesh 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "gfx_core 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "gfx_device_gl 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",

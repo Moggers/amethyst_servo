@@ -1,7 +1,7 @@
 use amethyst::core::bundle::{ECSBundle, Result};
 use amethyst::ecs::DispatcherBuilder;
 use amethyst::prelude::World;
-use super::{ServoHandle, ServoSize, ServoUiSystem, ServoUrl};
+use super::{ServoBlit, ServoHandle, ServoSize, ServoUiSystem, ServoUrl};
 
 pub struct ServoUiBundle;
 impl<'a, 'b> ECSBundle<'a, 'b> for ServoUiBundle {
@@ -13,6 +13,7 @@ impl<'a, 'b> ECSBundle<'a, 'b> for ServoUiBundle {
         world.register::<ServoUrl>();
         world.register::<ServoHandle>();
         world.register::<ServoSize>();
+        world.register::<ServoBlit>();
         Ok(dispatcher.add_thread_local(ServoUiSystem::new(world)))
     }
 }

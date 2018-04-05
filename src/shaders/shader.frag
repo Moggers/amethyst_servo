@@ -1,11 +1,14 @@
-#version 330 core
+#version 150 core
+
+uniform sampler2D albedo;
+
+in VertexData {
+  vec4 position;
+  vec2 tex_coord;
+} vertex;
 
 out vec4 color;
 
-uniform sampler2D renderedTexture;
-
-in vec2 tex_coord_out;
-
 void main(){
-    color = texture( renderedTexture, tex_coord_out).rgba;
+    color = vec4(1., 1., 1., 1.);
 }
