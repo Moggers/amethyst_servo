@@ -10,7 +10,7 @@ out VertexData {
 } vertex;
 
 void main() {
-    vertex.position = vec4(in_position, 1);
+    vertex.position = vec4(in_position.xy - vec2(1., 1.) * vec2(2., 2.), 0, 1);
     vertex.tex_coord = tex_coord;
     gl_Position = vertex.position;
 }

@@ -17,32 +17,8 @@ impl State for Example {
         let material = { world.read_resource::<MaterialDefaults>().0.clone() };
         world
             .create_entity()
-            .with::<ServoUrl>(
-                format!(
-                    "file://{}/examples/assets/test.html",
-                    env!("CARGO_MANIFEST_DIR")
-                ).into(),
-            )
-            .with::<ServoSize>((1024, 1024).into())
             .with(ServoBlit {})
             .with(material)
-            .build();
-
-        println!("Create lights");
-        let light: Light = PointLight {
-            center: [6.0, -6.0, -6.0].into(),
-            intensity: 5.0,
-            color: [1., 1., 1.].into(),
-            ..PointLight::default()
-        }.into();
-        world.create_entity().with(light).build();
-
-        println!("Create camera");
-        let transform = Matrix4::from_translation([0.0, 0.0, 2.0].into());
-        world
-            .create_entity()
-            .with(Camera::from(Projection::perspective(1.3, Deg(60.0))))
-            .with(GlobalTransform(transform.into()))
             .build();
     }
 
@@ -76,7 +52,6 @@ fn run() -> Result<(), amethyst::Error> {
     let pipe = Pipeline::build().with_stage(
         Stage::with_backbuffer()
             .clear_target([0.0, 0.0, 0.0, 1.0], 1.0)
-            .with_pass(DrawPbm::<PosNormTangTex>::new())
             .with_pass(ServoPass::new()),
     );
     let mut game = Application::build(&resources, Example)?

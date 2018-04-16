@@ -252,9 +252,7 @@ impl WindowMethods for ServoWindow {
         }
     }
 
-    fn present(&self) {
-        println!("Unbound framebuffer");
-    }
+    fn present(&self) {}
 
     fn create_event_loop_waker(&self) -> Box<EventLoopWaker> {
         Box::new(WinitEventLoopWaker {

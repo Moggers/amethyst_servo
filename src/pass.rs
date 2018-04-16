@@ -1,6 +1,6 @@
 use amethyst::renderer::pipe::pass::{Pass, PassData};
-use amethyst::renderer::{Effect, Encoder, Factory, Material, Mesh, NewEffect, PosTex, Texture,
-                         VertexFormat};
+use amethyst::renderer::{DepthMode, Effect, Encoder, Factory, Material, Mesh, NewEffect, PosTex,
+                         Texture, VertexFormat};
 use amethyst::renderer::error::Result as RendererResult;
 use amethyst::ecs::{Fetch, Join, ReadStorage};
 use amethyst::assets::AssetStorage;
@@ -36,28 +36,28 @@ impl Pass for ServoPass {
     fn compile(&mut self, mut effect: NewEffect) -> RendererResult<Effect> {
         let data = vec![
             PosTex {
-                position: [-1., -1., 2.],
-                tex_coord: [0., 0.],
-            },
-            PosTex {
-                position: [1., 1., 2.],
-                tex_coord: [1., 1.],
-            },
-            PosTex {
-                position: [-1., 1., 2.],
+                position: [0., 1., 0.],
                 tex_coord: [0., 1.],
             },
             PosTex {
-                position: [-1., -1., 2.],
-                tex_coord: [0., 0.],
+                position: [1., 1., 0.],
+                tex_coord: [1., 1.],
             },
             PosTex {
-                position: [1., -1., 2.],
+                position: [1., 0., 0.],
                 tex_coord: [1., 0.],
             },
             PosTex {
-                position: [1., 1., 2.],
-                tex_coord: [1., 1.],
+                position: [0., 1., 0.],
+                tex_coord: [0., 1.],
+            },
+            PosTex {
+                position: [1., 0., 0.],
+                tex_coord: [1., 0.],
+            },
+            PosTex {
+                position: [0., 0., 0.],
+                tex_coord: [0., 0.],
             },
         ];
         self.mesh = Some(Mesh::build(data).build(&mut effect.factory)?);
@@ -77,11 +77,10 @@ impl Pass for ServoPass {
     ) {
         let mesh = self.mesh.as_ref().unwrap();
 
-        let vbuf = match mesh.buffer(PosTex::ATTRIBUTES) {
-            Some(vbuf) => vbuf.clone(),
+        match mesh.buffer(PosTex::ATTRIBUTES) {
+            Some(vbuf) => effect.data.vertex_bufs.push(vbuf.clone()),
             None => return,
         };
-        effect.data.vertex_bufs.push(vbuf);
         for (material, _) in (&materials, &blits).join() {
             if let Some(image) = tex_storage.get(&material.albedo) {
                 effect.data.textures.push(image.view().clone());
